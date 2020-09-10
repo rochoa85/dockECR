@@ -17,6 +17,7 @@ The script is written in python3 with system calls to the Ubuntu OS. The docking
 - LeDock: http://www.lephar.com/download.htm - stand-alone tools: ledock_linux_x86
 - rDock: https://sourceforge.net/projects/rdock/files/ - stand-alone tools: rbcavity, rbdock and sdsort
 - MGL Tools: http://mgltools.scripps.edu/downloads - stand-alone tools: pythonsh
+- RDKit: http://rdkit.org - version for python3
 
 In addition to these packages, it is required to install OpenBabel (https://sourceforge.net/projects/openbabel/), which can be obtained from the main OS package repository.
 
