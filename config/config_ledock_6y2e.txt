@@ -1,0 +1,13 @@
+Receptor
+6y2e_mol7.pdb
+RMSD
+1.0
+Binding pocket
+-26.6 3.4000000000000004
+-0.5 29.5
+53.3 83.3
+Number of binding poses
+10
+Ligands list
+mol-list_mol7
+END

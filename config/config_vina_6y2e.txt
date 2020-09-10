@@ -1,0 +1,9 @@
+center_x=-11.6
+center_y=14.5
+center_z=68.3
+size_x=30
+size_y=30
+size_z=30
+cpu=1
+exhaustiveness=1
+num_modes = 1
