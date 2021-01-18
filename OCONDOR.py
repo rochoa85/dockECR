@@ -37,6 +37,7 @@ import argparse
 import subprocess
 import operator
 import os
+import math
 import yaml
 import multiprocessing
 from auxiliar import calculate_rmsd
@@ -254,10 +255,8 @@ if __name__ == '__main__':
                         help='File with the list of software that will be included in the consensus')
     parser.add_argument('-m', dest='mode', action='store',required=True,
                         help='Mode the script will be run. Options: (i) docking, (ii) ranking')
-    parser.add_argument('-t', dest='target', action='store',required=True,
-                        help='Name of the PDB structure used as target')
-    parser.add_argument('-c', dest='config_file', type=argparse.FileType(mode='r'),
-                        help='File containing the center coordinates and size of the box. Note: Only for docking mode') 
+    parser.add_argument('-t', dest='list_targets', action='store',required=True,
+                        help='List with the name of the PDB structures used as targets')
     
     #####################################################################################
     # Assignment of parameters
@@ -267,158 +266,119 @@ if __name__ == '__main__':
     # Map the main parameters
     list_software=[x.strip() for x in open(args.list_software)] # List of software
     list_ligands=[x.strip() for x in open(args.list_ligands)] # List of ligands
-    target=args.target # Target structure
+    list_targets=[x.strip() for x in open(args.list_targets)] # List of ligands
     mode=args.mode # Mode: docking or ranking
-    
-    # Check the coordinates
-    if args.config_file:
-        data = yaml.load(args.config_file)
-        delattr(args, 'config_file')
-        arg_dict = args.__dict__
-        for key, value in data.items():
-            if isinstance(value, list):
-                for v in value:
-                    arg_dict[key].extend(v)
-            else:
-                arg_dict[key] = value
-    else:
-        if mode=="docking":
-            print("A config file is necessary to run the protocol. Exiting ...")
-            exit()
-    
-    # Check the arguments
-    try:
-        if args.center_x: center_x=float(args.center_x)
-    except:
-        if mode=="docking":
-            print("The parameter 'center_x' is required for the analysis. Exiting ...")
-            exit()
-    try:
-        if args.center_y: center_y=float(args.center_y)
-    except:
-        if mode=="docking":
-            print("The parameter 'center_y' is required for the analysis. Exiting ...")
-            exit()
-    try:
-        if args.center_z: center_z=float(args.center_z)
-    except:
-        if mode=="docking":
-            print("The parameter 'center_z' is required for the analysis. Exiting ...")
-            exit()
-    try:
-        if args.size_x: size_x=int(args.size_x)
-    except:
-        if mode=="docking":
-            print("The parameter 'size_x' is required for the analysis. Exiting ...")
-            exit()
-    try:
-        if args.size_y: size_y=int(args.size_y)
-    except:
-        if mode=="docking":
-            print("The parameter 'size_y' is required for the analysis. Exiting ...")
-            exit()
-    try:
-        if args.size_z: size_z=int(args.size_z)
-    except:
-        if mode=="docking":
-            print("The parameter 'size_z' is required for the analysis. Exiting ...")
-            exit()
 
     ####################################################################################
     # Run docking protocols
     ####################################################################################
     
     if mode=="docking":
-        
-        # Size parameter for ledock
-        xmin=center_x-(size_x/2); xmax=center_x+(size_x/2)
-        ymin=center_y-(size_y/2); ymax=center_y+(size_y/2)
-        zmin=center_z-(size_z/2); zmax=center_z+(size_z/2)
-        
-        # Iterate over the software list
-        for software in list_software:
-            if software == "vina":
+        # Iterate over the targets
+        for target in list_targets:
+            try:
+                config_file=[x.strip() for x in open("config_{}.txt".format(target))]
+                for line in config_file:
+                    fields=line.split()
+                    if fields[0]=="center_x:": center_x=float(fields[1])
+                    if fields[0]=="center_y:": center_y=float(fields[1])
+                    if fields[0]=="center_z:": center_z=float(fields[1])
+                    if fields[0]=="size_x:": size_x=int(fields[1])
+                    if fields[0]=="size_y:": size_y=int(fields[1])
+                    if fields[0]=="size_z:": size_z=int(fields[1])
+            except:
+                print("A config file with the center and size of the box for target {} is necessary to run the protocol. Also avoid blank lines. Exiting ...".format(target))
+                exit()
                 
-                # Create config file
-                config=open("config/config_vina_{}.txt".format(target),"w")
-                config.write("center_x={}\n".format(center_x))
-                config.write("center_y={}\n".format(center_y))
-                config.write("center_z={}\n".format(center_z))
-                config.write("size_x={}\n".format(size_x))
-                config.write("size_y={}\n".format(size_y))
-                config.write("size_z={}\n".format(size_z))
-                config.write("cpu=1\n")
-                config.write("exhaustiveness=1\n")
-                config.write("num_modes = 10\n")
-                config.close()
-                
-                pool=multiprocessing.Pool()
-                for ligand in list_ligands:
-                    prepare_pdbqt(target,ligand)
-                    # Create parallel jobs
-                    pool.apply_async(run_vina, args=(target,ligand,center_x,center_y,center_z,size_x,size_y,size_z,))
-                    
-                pool.close()
-                pool.join()
-                # Delete all temporal files
-                os.system("rm *.pdbqt score_*.log")
+            # Size parameter for ledock
+            xmin=center_x-(size_x/2); xmax=center_x+(size_x/2)
+            ymin=center_y-(size_y/2); ymax=center_y+(size_y/2)
+            zmin=center_z-(size_z/2); zmax=center_z+(size_z/2)
             
-            if software == "smina":
-                # Create config file
-                config=open("config/config_smina_{}.txt".format(target),"w")
-                config.write("center_x={}\n".format(center_x))
-                config.write("center_y={}\n".format(center_y))
-                config.write("center_z={}\n".format(center_z))
-                config.write("size_x={}\n".format(size_x))
-                config.write("size_y={}\n".format(size_y))
-                config.write("size_z={}\n".format(size_z))
-                config.write("cpu = 1\n")
-                config.write("exhaustiveness=1\n")
-                config.write("num_modes = 10\n")
-                config.write("scoring = vinardo\n")
-                config.close()
-                
-                pool=multiprocessing.Pool()
-                for ligand in list_ligands:
-                    prepare_pdbqt(target,ligand)
-                    # Create parallel jobs
-                    pool.apply_async(run_smina, args=(target,ligand,center_x,center_y,center_z,size_x,size_y,size_z,))
-                
-                pool.close()
-                pool.join()
-                # Delete all temporal files
-                os.system("rm *.pdbqt score_*.log")
+            # Iterate over the software list
+            for software in list_software:
+                if software == "vina":
                     
-            if software == "ledock":
-                pool=multiprocessing.Pool()
-                for ligand in list_ligands:
-                    # Create parallel jobs
-                    pool.apply_async(run_ledock, args=(target,ligand,xmin,xmax,ymin,ymax,zmin,zmax,))
-                
-                pool.close()
-                pool.join()
-                # Delete all temporal files
-                os.system("rm *.pdb *.mol2 mol-list_* config_ledock_*")
+                    # Create config file
+                    config=open("config/config_vina_{}.txt".format(target),"w")
+                    config.write("center_x={}\n".format(center_x))
+                    config.write("center_y={}\n".format(center_y))
+                    config.write("center_z={}\n".format(center_z))
+                    config.write("size_x={}\n".format(size_x))
+                    config.write("size_y={}\n".format(size_y))
+                    config.write("size_z={}\n".format(size_z))
+                    config.write("cpu=1\n")
+                    config.write("exhaustiveness=1\n")
+                    config.write("num_modes = 10\n")
+                    config.close()
                     
-            if software == "rdock":
-                pool=multiprocessing.Pool()
-                for i,ligand in enumerate(list_ligands):
-                    if i==0:
-                        prepare_rdock_cavity(target,ligand,center_x,center_y,center_z,size_x,size_y,size_z)
-                        os.system("babel -ipdb target/{}.pdb -omol2 receptor.mol2".format(target))
-                        os.system("cp config/rdock* .")
-                        os.system("cp auxiliar/dock.prm .")
-                        run_rdock(target,ligand)
-                        os.system("cp config/rdock* .")
-                        os.system("cp auxiliar/dock.prm .")
-                    else:
+                    pool=multiprocessing.Pool()
+                    for ligand in list_ligands:
+                        prepare_pdbqt(target,ligand)
                         # Create parallel jobs
-                        pool.apply_async(run_rdock, args=(target,ligand,))
+                        pool.apply_async(run_vina, args=(target,ligand,center_x,center_y,center_z,size_x,size_y,size_z,))
+                        
+                    pool.close()
+                    pool.join()
+                    # Delete all temporal files
+                    os.system("rm *.pdbqt score_*.log")
+                
+                if software == "smina":
+                    # Create config file
+                    config=open("config/config_smina_{}.txt".format(target),"w")
+                    config.write("center_x={}\n".format(center_x))
+                    config.write("center_y={}\n".format(center_y))
+                    config.write("center_z={}\n".format(center_z))
+                    config.write("size_x={}\n".format(size_x))
+                    config.write("size_y={}\n".format(size_y))
+                    config.write("size_z={}\n".format(size_z))
+                    config.write("cpu = 1\n")
+                    config.write("exhaustiveness=1\n")
+                    config.write("num_modes = 10\n")
+                    config.write("scoring = vinardo\n")
+                    config.close()
                     
-                pool.close()
-                pool.join()
-                # Delete all temporal files
-                os.system("rm *.sd *.mol2 rdock* dock.prm")
+                    pool=multiprocessing.Pool()
+                    for ligand in list_ligands:
+                        prepare_pdbqt(target,ligand)
+                        # Create parallel jobs
+                        pool.apply_async(run_smina, args=(target,ligand,center_x,center_y,center_z,size_x,size_y,size_z,))
+                    
+                    pool.close()
+                    pool.join()
+                    # Delete all temporal files
+                    os.system("rm *.pdbqt score_*.log")
+                        
+                if software == "ledock":
+                    pool=multiprocessing.Pool()
+                    for ligand in list_ligands:
+                        # Create parallel jobs
+                        pool.apply_async(run_ledock, args=(target,ligand,xmin,xmax,ymin,ymax,zmin,zmax,))
+                    
+                    pool.close()
+                    pool.join()
+                    # Delete all temporal files
+                    os.system("rm *.pdb *.mol2 mol-list_* config_ledock_*")
+                        
+                if software == "rdock":
+                    pool=multiprocessing.Pool()
+                    for i,ligand in enumerate(list_ligands):
+                        if i==0:
+                            prepare_rdock_cavity(target,ligand,center_x,center_y,center_z,size_x,size_y,size_z)
+                            os.system("babel -ipdb target/{}.pdb -omol2 receptor.mol2".format(target))
+                            os.system("cp config/rdock* .")
+                            os.system("cp auxiliar/dock.prm .")
+                            run_rdock(target,ligand)
+                            os.system("cp config/rdock* .")
+                            os.system("cp auxiliar/dock.prm .")
+                        else:
+                            # Create parallel jobs
+                            pool.apply_async(run_rdock, args=(target,ligand,))
+                        
+                    pool.close()
+                    pool.join()
+                    # Delete all temporal files
+                    os.system("rm *.sd *.mol2 rdock* dock.prm")
     
     ####################################################################################
     # Run ranking protocols
@@ -426,83 +386,218 @@ if __name__ == '__main__':
     
     if mode=="ranking":
         
-        os.system("mkdir temp_ranking")
+        # Create general dictionaries for the final ranking
+        ecr_vina={}
+        ecr_smina={}
+        ecr_ledock={}
+        ecr_rdock={}
+        ecr_rmsd={}
         
-        for software in list_software:
-            if software == "vina":
-                ranked_ligands_vina={}
-                for ligand in list_ligands:
-                    score_v=score_vina(target,ligand)
-                    ranked_ligands_vina[ligand]=score_v
-                
-                print(ranked_ligands_vina)
-                sorted_x = sorted(ranked_ligands_vina.items(), key=operator.itemgetter(1))
-                
-                rank_file_vina=open("ranks/rank_vina_{}.txt".format(target),"w")
-                for j,element in enumerate(sorted_x):
-                    rank_file_vina.write("{}\t{}\t{}\n".format(j+1,element[0],element[1]))
-                rank_file_vina.close()
+        # Iterate over the list of targets
+        for target in list_targets:
+            os.system("mkdir temp_ranking")
             
-            if software == "smina":
-                ranked_ligands_smina={}
-                for ligand in list_ligands:
-                    score_s=score_smina(target,ligand)
-                    ranked_ligands_smina[ligand]=score_s
+            for software in list_software:
+                if software == "vina":
+                    ranked_ligands_vina={}
+                    for ligand in list_ligands:
+                        score_v=score_vina(target,ligand)
+                        ranked_ligands_vina[ligand]=score_v
+                    
+                    print(ranked_ligands_vina)
+                    sorted_x = sorted(ranked_ligands_vina.items(), key=operator.itemgetter(1))
+                    
+                    rank_file_vina=open("ranks/rank_vina_{}.txt".format(target),"w")
+                    ecr_vina[target]={}
+                    for j,element in enumerate(sorted_x):
+                        rank_file_vina.write("{}\t{}\t{}\n".format(j+1,element[0],element[1]))
+                        ecr_vina[target][element[0]]=j+1
+                    rank_file_vina.close()
                 
-                print(ranked_ligands_smina)
-                sorted_x = sorted(ranked_ligands_smina.items(), key=operator.itemgetter(1))
+                if software == "smina":
+                    ranked_ligands_smina={}
+                    for ligand in list_ligands:
+                        score_s=score_smina(target,ligand)
+                        ranked_ligands_smina[ligand]=score_s
+                    
+                    print(ranked_ligands_smina)
+                    sorted_x = sorted(ranked_ligands_smina.items(), key=operator.itemgetter(1))
+                    
+                    rank_file_smina=open("ranks/rank_smina_{}.txt".format(target),"w")
+                    ecr_smina[target]={}
+                    for j,element in enumerate(sorted_x):
+                        rank_file_smina.write("{}\t{}\t{}\n".format(j+1,element[0],element[1]))
+                        ecr_smina[target][element[0]]=j+1
+                    rank_file_smina.close()
                 
-                rank_file_smina=open("ranks/rank_smina_{}.txt".format(target),"w")
-                for j,element in enumerate(sorted_x):
-                    rank_file_smina.write("{}\t{}\t{}\n".format(j+1,element[0],element[1]))
-                rank_file_smina.close()
+                if software == "ledock":
+                    ranked_ligands_ledock={}
+                    for ligand in list_ligands:
+                        score_l=score_ledock(target,ligand)
+                        ranked_ligands_ledock[ligand]=score_l
+                    
+                    print(ranked_ligands_ledock)
+                    sorted_x = sorted(ranked_ligands_ledock.items(), key=operator.itemgetter(1))
+                    
+                    rank_file_ledock=open("ranks/rank_ledock_{}.txt".format(target),"w")
+                    ecr_ledock[target]={}
+                    for j,element in enumerate(sorted_x):
+                        rank_file_ledock.write("{}\t{}\t{}\n".format(j+1,element[0],element[1]))
+                        ecr_ledock[target][element[0]]=j+1
+                    rank_file_ledock.close()
+                
+                if software == "rdock":
+                    ranked_ligands_rdock={}
+                    for ligand in list_ligands:
+                        score_r=score_rdock(target,ligand)
+                        ranked_ligands_rdock[ligand]=score_r
+                    
+                    print(ranked_ligands_rdock)
+                    sorted_x = sorted(ranked_ligands_rdock.items(), key=operator.itemgetter(1))
+                    
+                    rank_file_rdock=open("ranks/rank_rdock_{}.txt".format(target),"w")
+                    ecr_rdock[target]={}
+                    for j,element in enumerate(sorted_x):
+                        rank_file_rdock.write("{}\t{}\t{}\n".format(j+1,element[0],element[1]))
+                        ecr_rdock[target][element[0]]=j+1
+                    rank_file_rdock.close()
             
-            if software == "ledock":
-                ranked_ligands_ledock={}
-                for ligand in list_ligands:
-                    score_l=score_ledock(target,ligand)
-                    ranked_ligands_ledock[ligand]=score_l
-                
-                print(ranked_ligands_ledock)
-                sorted_x = sorted(ranked_ligands_ledock.items(), key=operator.itemgetter(1))
-                
-                rank_file_ledock=open("ranks/rank_ledock_{}.txt".format(target),"w")
-                for j,element in enumerate(sorted_x):
-                    rank_file_ledock.write("{}\t{}\t{}\n".format(j+1,element[0],element[1]))
-                rank_file_ledock.close()
+            # Calculate full RMSD
+            ranked_ligands_rmsd={}
+            for ligand in list_ligands:
+                rmsd_m=calculate_rmsd.calculate_mean_RMSD("temp_ranking",ligand,list_software)
+                ranked_ligands_rmsd[ligand]=rmsd_m
             
-            if software == "rdock":
-                ranked_ligands_rdock={}
-                for ligand in list_ligands:
-                    score_r=score_rdock(target,ligand)
-                    ranked_ligands_rdock[ligand]=score_r
-                
-                print(ranked_ligands_rdock)
-                sorted_x = sorted(ranked_ligands_rdock.items(), key=operator.itemgetter(1))
-                
-                rank_file_rdock=open("ranks/rank_rdock_{}.txt".format(target),"w")
-                for j,element in enumerate(sorted_x):
-                    rank_file_rdock.write("{}\t{}\t{}\n".format(j+1,element[0],element[1]))
-                rank_file_rdock.close()
-        
-        # Calculate full RMSD
-        ranked_ligands_rmsd={}
-        for ligand in list_ligands:
-            rmsd_m=calculate_rmsd.calculate_mean_RMSD("temp_ranking",ligand,list_software)
-            ranked_ligands_rmsd[ligand]=rmsd_m
-        
-        print(ranked_ligands_rmsd)
-        sorted_x = sorted(ranked_ligands_rmsd.items(), key=operator.itemgetter(1))
-        
-        rank_file_rmsd=open("ranks/rank_rmsd_{}.txt".format(target),"w")
-        for j,element in enumerate(sorted_x):
-            rank_file_rmsd.write("{}\t{}\t{}\n".format(j+1,element[0],element[1]))
-        rank_file_rmsd.close()
-        
-        os.system("rm -r temp_ranking")
+            print(ranked_ligands_rmsd)
+            sorted_x = sorted(ranked_ligands_rmsd.items(), key=operator.itemgetter(1))
             
+            rank_file_rmsd=open("ranks/rank_rmsd_{}.txt".format(target),"w")
+            ecr_rmsd[target]={}
+            for j,element in enumerate(sorted_x):
+                rank_file_rmsd.write("{}\t{}\t{}\n".format(j+1,element[0],element[1]))
+                ecr_rmsd[target][element[0]]=j+1
+            rank_file_rmsd.close()
+            
+            os.system("rm -r temp_ranking")
+        
+        
         # Run ECR ranking
-        os.system("cp list_software.txt list_metrics.txt; echo rmsd >> list_metrics.txt")
-        os.system("./calculate_ecr.sh -t {} -s list_metrics.txt -l list_ligands.txt".format(target))
-        os.system("rm list_metrics.txt")
-        print("ECR ranking completed")
+        if len(list_targets)==1:
+            target=list_targets[0]
+            list_software.append("rmsd")
+            sigma=len(list_ligands)
+            prob_ligands={}
+            
+            # Iterate over the ligands to calculate the ECR
+            for ligand in list_ligands:
+                prob=0
+                if "vina" in list_software:
+                    prob+=math.exp(-1*ecr_vina[target][ligand]/sigma)/sigma
+                if "smina" in list_software:
+                    prob+=math.exp(-1*ecr_smina[target][ligand]/sigma)/sigma
+                if "ledock" in list_software:
+                    prob+=math.exp(-1*ecr_ledock[target][ligand]/sigma)/sigma
+                if "rdock" in list_software:
+                    prob+=math.exp(-1*ecr_rdock[target][ligand]/sigma)/sigma
+                if "rmsd" in list_software:
+                    prob+=math.exp(-1*ecr_rmsd[target][ligand]/sigma)/sigma
+                prob_ligands[ligand]=prob
+            
+            sorted_prob = sorted(prob_ligands.items(), key=operator.itemgetter(1))
+            sorted_prob.reverse()
+            
+            ecr_file=open("ranks/rank_ecr_{}.txt".format(target),"w")
+            for j,element in enumerate(sorted_prob):
+                ecr_file.write("{}\t{}\t{:.8f}\n".format(j+1,element[0],element[1]))
+            ecr_file.close()
+            print("ECR ranking completed")
+        else:
+            # Case to do merging and shrinking plus the ECR ranking
+            ecr_vina["total"]={}
+            ecr_smina["total"]={}
+            ecr_ledock["total"]={}
+            ecr_rdock["total"]={}
+            ecr_rmsd["total"]={}
+            list_software.append("rmsd")
+            sigma=len(list_ligands)
+            
+            for ligand in list_ligands:
+                best_rank_vina=0
+                best_rank_smina=0
+                best_rank_ledock=0
+                best_rank_rdock=0
+                best_rank_rmsd=0
+                for i,target in enumerate(list_targets):
+                    if i==0:
+                        best_rank_vina=ecr_vina[target][ligand]
+                        best_rank_smina=ecr_smina[target][ligand]
+                        best_rank_ledock=ecr_ledock[target][ligand]
+                        best_rank_rdock=ecr_rdock[target][ligand]
+                        best_rank_rmsd=ecr_rmsd[target][ligand]
+                    else:
+                        if ecr_vina[target][ligand]<best_rank_vina: best_rank_vina=ecr_vina[target][ligand]
+                        if ecr_smina[target][ligand]<best_rank_smina: best_rank_smina=ecr_smina[target][ligand]
+                        if ecr_ledock[target][ligand]<best_rank_ledock: best_rank_ledock=ecr_ledock[target][ligand]
+                        if ecr_rdock[target][ligand]<best_rank_rdock: best_rank_rdock=ecr_rdock[target][ligand]
+                        if ecr_rmsd[target][ligand]<best_rank_rmsd: best_rank_rmsd=ecr_rmsd[target][ligand]
+                
+                ecr_vina["total"][ligand]=best_rank_vina
+                ecr_smina["total"][ligand]=best_rank_smina
+                ecr_ledock["total"][ligand]=best_rank_ledock
+                ecr_rdock["total"][ligand]=best_rank_rdock
+                ecr_rmsd["total"][ligand]=best_rank_rmsd
+                        
+            prob_ligands={}
+            # Iterate over the ligands to calculate the ECR
+            for ligand in list_ligands:
+                prob=0
+                if "vina" in list_software:
+                    prob+=math.exp(-1*ecr_vina["total"][ligand]/sigma)/sigma
+                if "smina" in list_software:
+                    prob+=math.exp(-1*ecr_smina["total"][ligand]/sigma)/sigma
+                if "ledock" in list_software:
+                    prob+=math.exp(-1*ecr_ledock["total"][ligand]/sigma)/sigma
+                if "rdock" in list_software:
+                    prob+=math.exp(-1*ecr_rdock["total"][ligand]/sigma)/sigma
+                if "rmsd" in list_software:
+                    prob+=math.exp(-1*ecr_rmsd["total"][ligand]/sigma)/sigma
+                prob_ligands[ligand]=prob
+            
+            sorted_prob = sorted(prob_ligands.items(), key=operator.itemgetter(1))
+            sorted_prob.reverse()
+            
+            target_comb="-".join(list_targets)
+            ecr_file=open("ranks/rank_ecr_{}.txt".format(target_comb),"w")
+            for j,element in enumerate(sorted_prob):
+                ecr_file.write("{}\t{}\t{:.8f}\n".format(j+1,element[0],element[1]))
+            ecr_file.close()
+            print("ECR ranking completed")
+            
+            # Run the ECR individually
+            for target in list_targets:
+                
+                prob_ligands={}
+                
+                # Iterate over the ligands to calculate the ECR
+                for ligand in list_ligands:
+                    prob=0
+                    if "vina" in list_software:
+                        prob+=math.exp(-1*ecr_vina[target][ligand]/sigma)/sigma
+                    if "smina" in list_software:
+                        prob+=math.exp(-1*ecr_smina[target][ligand]/sigma)/sigma
+                    if "ledock" in list_software:
+                        prob+=math.exp(-1*ecr_ledock[target][ligand]/sigma)/sigma
+                    if "rdock" in list_software:
+                        prob+=math.exp(-1*ecr_rdock[target][ligand]/sigma)/sigma
+                    if "rmsd" in list_software:
+                        prob+=math.exp(-1*ecr_rmsd[target][ligand]/sigma)/sigma
+                    prob_ligands[ligand]=prob
+                
+                sorted_prob = sorted(prob_ligands.items(), key=operator.itemgetter(1))
+                sorted_prob.reverse()
+                
+                ecr_file=open("ranks/rank_ecr_{}.txt".format(target),"w")
+                for j,element in enumerate(sorted_prob):
+                    ecr_file.write("{}\t{}\t{:.8f}\n".format(j+1,element[0],element[1]))
+                ecr_file.close()
+                print("ECR ranking for target {} completed".format(target))

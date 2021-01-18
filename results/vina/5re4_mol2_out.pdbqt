@@ -1,0 +1,1160 @@
+MODEL 1
+REMARK VINA RESULT:      -7.6      0.000      0.000
+REMARK  11 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N_1  and  S_2 
+REMARK    2  A    between atoms: S_2  and  C_5 
+REMARK    3  A    between atoms: C_8  and  C_9 
+REMARK    4  A    between atoms: C_9  and  C_10 
+REMARK    5  A    between atoms: C_14  and  N_15 
+REMARK       I    between atoms: N_15  and  C_16 
+REMARK       I    between atoms: C_16  and  N_18 
+REMARK    6  A    between atoms: N_18  and  C_19 
+REMARK    7  A    between atoms: C_21  and  C_22 
+REMARK    8  A    between atoms: C_22  and  C_23 
+REMARK    9  A    between atoms: C_23  and  N_24 
+REMARK       I    between atoms: N_24  and  C_25 
+REMARK   10  A    between atoms: C_25  and  C_27 
+REMARK   11  A    between atoms: C_30  and  O_31 
+ROOT
+HETATM    1  C   LIG     1     -16.294 -21.520  -1.557  1.00  0.00     0.054 A 
+HETATM    2  C   LIG     1     -15.213 -20.870  -2.158  1.00  0.00    -0.048 A 
+HETATM    3  C   LIG     1     -15.428 -19.862  -3.104  1.00  0.00    -0.037 A 
+HETATM    4  C   LIG     1     -16.750 -19.537  -3.392  1.00  0.00     0.008 A 
+HETATM    5  N   LIG     1     -17.822 -20.137  -2.824  1.00  0.00    -0.270 NA
+HETATM    6  C   LIG     1     -17.572 -21.122  -1.925  1.00  0.00     0.028 A 
+HETATM    7  H   LIG     1     -14.200 -21.188  -1.930  1.00  0.00     0.087 H 
+HETATM    8  H   LIG     1     -16.999 -18.766  -4.118  1.00  0.00     0.115 H 
+HETATM    9  H   LIG     1     -18.461 -21.557  -1.476  1.00  0.00     0.118 H 
+ENDROOT
+BRANCH   1  10
+HETATM   10  N   LIG     1     -16.022 -22.498  -0.581  1.00  0.00    -0.307 N 
+HETATM   11  C   LIG     1     -15.693 -23.813  -0.874  1.00  0.00     0.325 C 
+HETATM   12  N   LIG     1     -15.520 -24.519   0.303  1.00  0.00    -0.309 N 
+HETATM   13  O   LIG     1     -15.576 -24.267  -2.002  1.00  0.00    -0.247 OA
+HETATM   14  H   LIG     1     -16.234 -24.293   0.980  1.00  0.00     0.170 HD
+HETATM   15  H   LIG     1     -15.587 -22.173   0.269  1.00  0.00     0.170 HD
+BRANCH  12  16
+HETATM   16  C   LIG     1     -15.011 -25.835   0.371  1.00  0.00     0.036 A 
+HETATM   17  C   LIG     1     -13.809 -26.019   1.053  1.00  0.00    -0.057 A 
+HETATM   18  C   LIG     1     -13.221 -27.277   1.103  1.00  0.00    -0.080 A 
+HETATM   19  H   LIG     1     -13.338 -25.201   1.590  1.00  0.00     0.086 H 
+HETATM   20  C   LIG     1     -13.797 -28.346   0.417  1.00  0.00    -0.076 A 
+HETATM   21  H   LIG     1     -12.303 -27.432   1.662  1.00  0.00     0.083 H 
+HETATM   22  C   LIG     1     -14.996 -28.195  -0.297  1.00  0.00    -0.052 A 
+HETATM   23  H   LIG     1     -13.279 -29.301   0.450  1.00  0.00     0.084 H 
+HETATM   24  C   LIG     1     -15.611 -26.921  -0.291  1.00  0.00    -0.051 A 
+HETATM   25  H   LIG     1     -16.535 -26.769  -0.845  1.00  0.00     0.087 H 
+BRANCH  22  26
+HETATM   26  C   LIG     1     -15.617 -29.344  -1.091  1.00  0.00    -0.017 C 
+HETATM   27  H   LIG     1     -15.875 -30.150  -0.393  1.00  0.00     0.047 H 
+HETATM   28  H   LIG     1     -16.560 -28.991  -1.528  1.00  0.00     0.047 H 
+BRANCH  26  29
+HETATM   29  C   LIG     1     -14.772 -29.946  -2.213  1.00  0.00    -0.054 A 
+HETATM   30  C   LIG     1     -14.956 -31.284  -2.598  1.00  0.00    -0.075 A 
+HETATM   31  C   LIG     1     -14.085 -31.895  -3.508  1.00  0.00    -0.060 A 
+HETATM   32  H   LIG     1     -15.761 -31.868  -2.154  1.00  0.00     0.084 H 
+HETATM   33  C   LIG     1     -13.026 -31.159  -4.050  1.00  0.00     0.074 A 
+HETATM   34  H   LIG     1     -14.238 -32.947  -3.738  1.00  0.00     0.085 H 
+HETATM   35  C   LIG     1     -12.869 -29.813  -3.731  1.00  0.00    -0.060 A 
+HETATM   36  C   LIG     1     -13.740 -29.209  -2.819  1.00  0.00    -0.075 A 
+HETATM   37  H   LIG     1     -12.054 -29.247  -4.167  1.00  0.00     0.085 H 
+HETATM   38  H   LIG     1     -13.582 -28.167  -2.556  1.00  0.00     0.084 H 
+BRANCH  33  39
+HETATM   39  S   LIG     1     -11.786 -31.939  -5.055  1.00  0.00     0.239 S 
+HETATM   40  O   LIG     1     -10.928 -32.703  -4.189  1.00  0.00    -0.206 OA
+HETATM   41  O   LIG     1     -11.245 -30.940  -5.961  1.00  0.00    -0.206 OA
+BRANCH  39  42
+HETATM   42  N   LIG     1     -12.676 -33.002  -6.022  1.00  0.00    -0.225 NA
+HETATM   43  H   LIG     1     -13.627 -33.181  -5.699  1.00  0.00     0.136 HD
+HETATM   44  H   LIG     1     -12.138 -33.861  -6.217  1.00  0.00     0.136 HD
+ENDBRANCH  39  42
+ENDBRANCH  33  39
+ENDBRANCH  26  29
+ENDBRANCH  22  26
+ENDBRANCH  12  16
+ENDBRANCH   1  10
+BRANCH   3  45
+HETATM   45  C   LIG     1     -14.282 -19.206  -3.832  1.00  0.00    -0.025 C 
+HETATM   46  H   LIG     1     -13.654 -18.654  -3.121  1.00  0.00     0.042 H 
+HETATM   47  H   LIG     1     -14.712 -18.447  -4.502  1.00  0.00     0.042 H 
+BRANCH  45  48
+HETATM   48  C   LIG     1     -13.404 -20.152  -4.668  1.00  0.00    -0.001 C 
+HETATM   49  H   LIG     1     -12.986 -19.586  -5.508  1.00  0.00     0.064 H 
+HETATM   50  H   LIG     1     -14.004 -20.964  -5.090  1.00  0.00     0.064 H 
+BRANCH  48  51
+HETATM   51  N   LIG     1     -12.271 -20.722  -3.945  1.00  0.00    -0.360 N 
+HETATM   52  C   LIG     1     -12.117 -22.090  -3.815  1.00  0.00     0.221 C 
+HETATM   53  O   LIG     1     -12.939 -22.884  -4.274  1.00  0.00    -0.273 OA
+HETATM   54  H   LIG     1     -11.463 -20.132  -3.796  1.00  0.00     0.162 HD
+BRANCH  52  55
+HETATM   55  C   LIG     1     -10.914 -22.541  -2.958  1.00  0.00     0.024 C 
+HETATM   56  C   LIG     1     -10.672 -21.644  -1.735  1.00  0.00    -0.051 C 
+HETATM   57  C   LIG     1     -11.486 -21.965  -0.474  1.00  0.00    -0.040 C 
+HETATM   58  H   LIG     1     -10.840 -20.589  -1.994  1.00  0.00     0.034 H 
+HETATM   59  H   LIG     1      -9.608 -21.714  -1.475  1.00  0.00     0.034 H 
+HETATM   60  C   LIG     1     -11.774 -23.443  -0.201  1.00  0.00     0.035 C 
+HETATM   61  H   LIG     1     -12.442 -21.434  -0.538  1.00  0.00     0.036 H 
+HETATM   62  H   LIG     1     -10.952 -21.539   0.383  1.00  0.00     0.036 H 
+HETATM   63  C   LIG     1     -11.936 -24.311  -1.444  1.00  0.00    -0.040 C 
+HETATM   64  H   LIG     1     -12.694 -23.520   0.396  1.00  0.00     0.082 H 
+HETATM   65  C   LIG     1     -10.912 -24.010  -2.534  1.00  0.00    -0.051 C 
+HETATM   66  H   LIG     1     -12.943 -24.184  -1.854  1.00  0.00     0.036 H 
+HETATM   67  H   LIG     1     -11.830 -25.370  -1.165  1.00  0.00     0.036 H 
+HETATM   68  H   LIG     1     -11.087 -24.675  -3.384  1.00  0.00     0.034 H 
+HETATM   69  H   LIG     1      -9.910 -24.260  -2.156  1.00  0.00     0.034 H 
+HETATM   70  H   LIG     1     -10.056 -22.394  -3.628  1.00  0.00     0.054 H 
+BRANCH  60  71
+HETATM   71  O   LIG     1     -10.726 -24.003   0.590  1.00  0.00    -0.396 OA
+HETATM   72  H   LIG     1     -11.068 -24.069   1.500  1.00  0.00     0.210 HD
+ENDBRANCH  60  71
+ENDBRANCH  52  55
+ENDBRANCH  48  51
+ENDBRANCH  45  48
+ENDBRANCH   3  45
+TORSDOF 11
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:      -7.5      1.717      2.057
+REMARK  11 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N_1  and  S_2 
+REMARK    2  A    between atoms: S_2  and  C_5 
+REMARK    3  A    between atoms: C_8  and  C_9 
+REMARK    4  A    between atoms: C_9  and  C_10 
+REMARK    5  A    between atoms: C_14  and  N_15 
+REMARK       I    between atoms: N_15  and  C_16 
+REMARK       I    between atoms: C_16  and  N_18 
+REMARK    6  A    between atoms: N_18  and  C_19 
+REMARK    7  A    between atoms: C_21  and  C_22 
+REMARK    8  A    between atoms: C_22  and  C_23 
+REMARK    9  A    between atoms: C_23  and  N_24 
+REMARK       I    between atoms: N_24  and  C_25 
+REMARK   10  A    between atoms: C_25  and  C_27 
+REMARK   11  A    between atoms: C_30  and  O_31 
+ROOT
+HETATM    1  C   LIG     1     -16.114 -20.880  -1.934  1.00  0.00     0.054 A 
+HETATM    2  C   LIG     1     -15.166 -20.004  -2.465  1.00  0.00    -0.048 A 
+HETATM    3  C   LIG     1     -15.534 -19.056  -3.426  1.00  0.00    -0.037 A 
+HETATM    4  C   LIG     1     -16.874 -19.023  -3.800  1.00  0.00     0.008 A 
+HETATM    5  N   LIG     1     -17.823 -19.848  -3.300  1.00  0.00    -0.270 NA
+HETATM    6  C   LIG     1     -17.423 -20.765  -2.384  1.00  0.00     0.028 A 
+HETATM    7  H   LIG     1     -14.124 -20.097  -2.171  1.00  0.00     0.087 H 
+HETATM    8  H   LIG     1     -17.238 -18.317  -4.543  1.00  0.00     0.115 H 
+HETATM    9  H   LIG     1     -18.222 -21.388  -1.992  1.00  0.00     0.118 H 
+ENDROOT
+BRANCH   1  10
+HETATM   10  N   LIG     1     -15.699 -21.786  -0.940  1.00  0.00    -0.307 N 
+HETATM   11  C   LIG     1     -15.083 -23.000  -1.207  1.00  0.00     0.325 C 
+HETATM   12  N   LIG     1     -14.833 -23.663  -0.020  1.00  0.00    -0.309 N 
+HETATM   13  O   LIG     1     -14.808 -23.410  -2.325  1.00  0.00    -0.247 OA
+HETATM   14  H   LIG     1     -15.617 -23.599   0.614  1.00  0.00     0.170 HD
+HETATM   15  H   LIG     1     -15.393 -21.384  -0.067  1.00  0.00     0.170 HD
+BRANCH  12  16
+HETATM   16  C   LIG     1     -14.063 -24.843   0.083  1.00  0.00     0.036 A 
+HETATM   17  C   LIG     1     -12.676 -24.699   0.083  1.00  0.00    -0.057 A 
+HETATM   18  C   LIG     1     -11.859 -25.824   0.116  1.00  0.00    -0.080 A 
+HETATM   19  H   LIG     1     -12.213 -23.717   0.101  1.00  0.00     0.086 H 
+HETATM   20  C   LIG     1     -12.423 -27.099   0.087  1.00  0.00    -0.076 A 
+HETATM   21  H   LIG     1     -10.779 -25.716   0.151  1.00  0.00     0.083 H 
+HETATM   22  C   LIG     1     -13.814 -27.283   0.067  1.00  0.00    -0.052 A 
+HETATM   23  H   LIG     1     -11.743 -27.947   0.072  1.00  0.00     0.084 H 
+HETATM   24  C   LIG     1     -14.632 -26.129   0.089  1.00  0.00    -0.051 A 
+HETATM   25  H   LIG     1     -15.714 -26.238   0.063  1.00  0.00     0.087 H 
+BRANCH  22  26
+HETATM   26  C   LIG     1     -14.447 -28.672  -0.012  1.00  0.00    -0.017 C 
+HETATM   27  H   LIG     1     -14.282 -29.184   0.944  1.00  0.00     0.047 H 
+HETATM   28  H   LIG     1     -15.533 -28.550  -0.121  1.00  0.00     0.047 H 
+BRANCH  26  29
+HETATM   29  C   LIG     1     -13.959 -29.592  -1.129  1.00  0.00    -0.054 A 
+HETATM   30  C   LIG     1     -13.146 -30.698  -0.831  1.00  0.00    -0.075 A 
+HETATM   31  C   LIG     1     -12.560 -31.455  -1.853  1.00  0.00    -0.060 A 
+HETATM   32  H   LIG     1     -12.934 -30.948   0.208  1.00  0.00     0.084 H 
+HETATM   33  C   LIG     1     -12.799 -31.112  -3.188  1.00  0.00     0.074 A 
+HETATM   34  H   LIG     1     -11.898 -32.270  -1.573  1.00  0.00     0.085 H 
+HETATM   35  C   LIG     1     -13.657 -30.061  -3.503  1.00  0.00    -0.060 A 
+HETATM   36  C   LIG     1     -14.236 -29.307  -2.477  1.00  0.00    -0.075 A 
+HETATM   37  H   LIG     1     -13.846 -29.813  -4.540  1.00  0.00     0.085 H 
+HETATM   38  H   LIG     1     -14.875 -28.470  -2.741  1.00  0.00     0.084 H 
+BRANCH  33  39
+HETATM   39  S   LIG     1     -11.929 -31.917  -4.512  1.00  0.00     0.239 S 
+HETATM   40  O   LIG     1     -11.065 -32.912  -3.935  1.00  0.00    -0.206 OA
+HETATM   41  O   LIG     1     -11.409 -30.891  -5.400  1.00  0.00    -0.206 OA
+BRANCH  39  42
+HETATM   42  N   LIG     1     -13.158 -32.692  -5.376  1.00  0.00    -0.225 NA
+HETATM   43  H   LIG     1     -13.077 -32.621  -6.391  1.00  0.00     0.136 HD
+HETATM   44  H   LIG     1     -14.087 -32.423  -5.017  1.00  0.00     0.136 HD
+ENDBRANCH  39  42
+ENDBRANCH  33  39
+ENDBRANCH  26  29
+ENDBRANCH  22  26
+ENDBRANCH  12  16
+ENDBRANCH   1  10
+BRANCH   3  45
+HETATM   45  C   LIG     1     -14.514 -18.158  -4.081  1.00  0.00    -0.025 C 
+HETATM   46  H   LIG     1     -14.260 -17.328  -3.409  1.00  0.00     0.042 H 
+HETATM   47  H   LIG     1     -14.997 -17.698  -4.955  1.00  0.00     0.042 H 
+BRANCH  45  48
+HETATM   48  C   LIG     1     -13.225 -18.855  -4.547  1.00  0.00    -0.001 C 
+HETATM   49  H   LIG     1     -12.798 -18.277  -5.373  1.00  0.00     0.064 H 
+HETATM   50  H   LIG     1     -13.444 -19.857  -4.930  1.00  0.00     0.064 H 
+BRANCH  48  51
+HETATM   51  N   LIG     1     -12.187 -18.953  -3.525  1.00  0.00    -0.360 N 
+HETATM   52  C   LIG     1     -11.703 -20.179  -3.107  1.00  0.00     0.221 C 
+HETATM   53  O   LIG     1     -12.146 -21.238  -3.551  1.00  0.00    -0.273 OA
+HETATM   54  H   LIG     1     -11.628 -18.129  -3.343  1.00  0.00     0.162 HD
+BRANCH  52  55
+HETATM   55  C   LIG     1     -10.664 -20.125  -1.966  1.00  0.00     0.024 C 
+HETATM   56  C   LIG     1     -10.370 -18.696  -1.483  1.00  0.00    -0.051 C 
+HETATM   57  C   LIG     1     -11.321 -18.117  -0.427  1.00  0.00    -0.040 C 
+HETATM   58  H   LIG     1     -10.336 -18.002  -2.334  1.00  0.00     0.034 H 
+HETATM   59  H   LIG     1      -9.356 -18.689  -1.061  1.00  0.00     0.034 H 
+HETATM   60  C   LIG     1     -11.874 -19.099   0.610  1.00  0.00     0.035 C 
+HETATM   61  H   LIG     1     -12.166 -17.651  -0.945  1.00  0.00     0.036 H 
+HETATM   62  H   LIG     1     -10.791 -17.309   0.091  1.00  0.00     0.036 H 
+HETATM   63  C   LIG     1     -12.084 -20.522   0.106  1.00  0.00    -0.040 C 
+HETATM   64  H   LIG     1     -12.837 -18.718   0.978  1.00  0.00     0.082 H 
+HETATM   65  C   LIG     1     -10.942 -21.032  -0.768  1.00  0.00    -0.051 C 
+HETATM   66  H   LIG     1     -13.020 -20.580  -0.457  1.00  0.00     0.036 H 
+HETATM   67  H   LIG     1     -12.179 -21.202   0.966  1.00  0.00     0.036 H 
+HETATM   68  H   LIG     1     -11.160 -22.057  -1.081  1.00  0.00     0.034 H 
+HETATM   69  H   LIG     1     -10.029 -21.090  -0.158  1.00  0.00     0.034 H 
+HETATM   70  H   LIG     1      -9.743 -20.488  -2.444  1.00  0.00     0.054 H 
+BRANCH  60  71
+HETATM   71  O   LIG     1     -11.000 -19.156   1.737  1.00  0.00    -0.396 OA
+HETATM   72  H   LIG     1     -11.024 -20.074   2.062  1.00  0.00     0.210 HD
+ENDBRANCH  60  71
+ENDBRANCH  52  55
+ENDBRANCH  48  51
+ENDBRANCH  45  48
+ENDBRANCH   3  45
+TORSDOF 11
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:      -7.0      4.642     10.730
+REMARK  11 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N_1  and  S_2 
+REMARK    2  A    between atoms: S_2  and  C_5 
+REMARK    3  A    between atoms: C_8  and  C_9 
+REMARK    4  A    between atoms: C_9  and  C_10 
+REMARK    5  A    between atoms: C_14  and  N_15 
+REMARK       I    between atoms: N_15  and  C_16 
+REMARK       I    between atoms: C_16  and  N_18 
+REMARK    6  A    between atoms: N_18  and  C_19 
+REMARK    7  A    between atoms: C_21  and  C_22 
+REMARK    8  A    between atoms: C_22  and  C_23 
+REMARK    9  A    between atoms: C_23  and  N_24 
+REMARK       I    between atoms: N_24  and  C_25 
+REMARK   10  A    between atoms: C_25  and  C_27 
+REMARK   11  A    between atoms: C_30  and  O_31 
+ROOT
+HETATM    1  C   LIG     1     -11.530 -32.997  -6.773  1.00  0.00     0.054 A 
+HETATM    2  C   LIG     1     -10.293 -33.575  -6.479  1.00  0.00    -0.048 A 
+HETATM    3  C   LIG     1      -9.351 -33.791  -7.491  1.00  0.00    -0.037 A 
+HETATM    4  C   LIG     1      -9.701 -33.388  -8.776  1.00  0.00     0.008 A 
+HETATM    5  N   LIG     1     -10.884 -32.815  -9.098  1.00  0.00    -0.270 NA
+HETATM    6  C   LIG     1     -11.778 -32.640  -8.092  1.00  0.00     0.028 A 
+HETATM    7  H   LIG     1     -10.083 -33.911  -5.467  1.00  0.00     0.087 H 
+HETATM    8  H   LIG     1      -9.024 -33.524  -9.616  1.00  0.00     0.115 H 
+HETATM    9  H   LIG     1     -12.702 -32.154  -8.391  1.00  0.00     0.118 H 
+ENDROOT
+BRANCH   1  10
+HETATM   10  N   LIG     1     -12.424 -32.764  -5.711  1.00  0.00    -0.307 N 
+HETATM   11  C   LIG     1     -12.134 -31.963  -4.617  1.00  0.00     0.325 C 
+HETATM   12  N   LIG     1     -13.206 -31.968  -3.743  1.00  0.00    -0.309 N 
+HETATM   13  O   LIG     1     -11.089 -31.351  -4.459  1.00  0.00    -0.247 OA
+HETATM   14  H   LIG     1     -13.589 -32.895  -3.630  1.00  0.00     0.170 HD
+HETATM   15  H   LIG     1     -13.405 -32.753  -5.946  1.00  0.00     0.170 HD
+BRANCH  12  16
+HETATM   16  C   LIG     1     -13.315 -31.123  -2.616  1.00  0.00     0.036 A 
+HETATM   17  C   LIG     1     -12.302 -31.201  -1.662  1.00  0.00    -0.057 A 
+HETATM   18  C   LIG     1     -12.381 -30.446  -0.498  1.00  0.00    -0.080 A 
+HETATM   19  H   LIG     1     -11.420 -31.814  -1.828  1.00  0.00     0.086 H 
+HETATM   20  C   LIG     1     -13.503 -29.655  -0.251  1.00  0.00    -0.076 A 
+HETATM   21  H   LIG     1     -11.577 -30.476   0.232  1.00  0.00     0.083 H 
+HETATM   22  C   LIG     1     -14.552 -29.567  -1.179  1.00  0.00    -0.052 A 
+HETATM   23  H   LIG     1     -13.539 -29.115   0.691  1.00  0.00     0.084 H 
+HETATM   24  C   LIG     1     -14.431 -30.299  -2.384  1.00  0.00    -0.051 A 
+HETATM   25  H   LIG     1     -15.232 -30.261  -3.118  1.00  0.00     0.087 H 
+BRANCH  22  26
+HETATM   26  C   LIG     1     -15.809 -28.742  -0.906  1.00  0.00    -0.017 C 
+HETATM   27  H   LIG     1     -16.598 -29.070  -1.595  1.00  0.00     0.047 H 
+HETATM   28  H   LIG     1     -16.160 -28.974   0.108  1.00  0.00     0.047 H 
+BRANCH  26  29
+HETATM   29  C   LIG     1     -15.680 -27.224  -1.027  1.00  0.00    -0.054 A 
+HETATM   30  C   LIG     1     -15.605 -26.619  -2.293  1.00  0.00    -0.075 A 
+HETATM   31  C   LIG     1     -15.326 -25.253  -2.420  1.00  0.00    -0.060 A 
+HETATM   32  H   LIG     1     -15.724 -27.226  -3.190  1.00  0.00     0.084 H 
+HETATM   33  C   LIG     1     -15.133 -24.479  -1.271  1.00  0.00     0.074 A 
+HETATM   34  H   LIG     1     -15.228 -24.840  -3.421  1.00  0.00     0.085 H 
+HETATM   35  C   LIG     1     -15.272 -25.048  -0.008  1.00  0.00    -0.060 A 
+HETATM   36  C   LIG     1     -15.547 -26.413   0.113  1.00  0.00    -0.075 A 
+HETATM   37  H   LIG     1     -15.135 -24.436   0.876  1.00  0.00     0.085 H 
+HETATM   38  H   LIG     1     -15.618 -26.847   1.106  1.00  0.00     0.084 H 
+BRANCH  33  39
+HETATM   39  S   LIG     1     -14.589 -22.791  -1.382  1.00  0.00     0.239 S 
+HETATM   40  O   LIG     1     -13.474 -22.624  -0.490  1.00  0.00    -0.206 OA
+HETATM   41  O   LIG     1     -15.760 -21.934  -1.294  1.00  0.00    -0.206 OA
+BRANCH  39  42
+HETATM   42  N   LIG     1     -14.042 -22.659  -2.976  1.00  0.00    -0.225 NA
+HETATM   43  H   LIG     1     -13.200 -23.196  -3.185  1.00  0.00     0.136 HD
+HETATM   44  H   LIG     1     -13.984 -21.671  -3.265  1.00  0.00     0.136 HD
+ENDBRANCH  39  42
+ENDBRANCH  33  39
+ENDBRANCH  26  29
+ENDBRANCH  22  26
+ENDBRANCH  12  16
+ENDBRANCH   1  10
+BRANCH   3  45
+HETATM   45  C   LIG     1      -8.045 -34.494  -7.216  1.00  0.00    -0.025 C 
+HETATM   46  H   LIG     1      -7.465 -34.581  -8.144  1.00  0.00     0.042 H 
+HETATM   47  H   LIG     1      -8.285 -35.524  -6.916  1.00  0.00     0.042 H 
+BRANCH  45  48
+HETATM   48  C   LIG     1      -7.172 -33.858  -6.121  1.00  0.00    -0.001 C 
+HETATM   49  H   LIG     1      -7.326 -32.774  -6.142  1.00  0.00     0.064 H 
+HETATM   50  H   LIG     1      -6.111 -34.041  -6.319  1.00  0.00     0.064 H 
+BRANCH  48  51
+HETATM   51  N   LIG     1      -7.488 -34.299  -4.766  1.00  0.00    -0.360 N 
+HETATM   52  C   LIG     1      -7.881 -33.400  -3.791  1.00  0.00     0.221 C 
+HETATM   53  O   LIG     1      -7.951 -32.191  -4.012  1.00  0.00    -0.273 OA
+HETATM   54  H   LIG     1      -7.698 -35.279  -4.627  1.00  0.00     0.162 HD
+BRANCH  52  55
+HETATM   55  C   LIG     1      -8.105 -34.004  -2.388  1.00  0.00     0.024 C 
+HETATM   56  C   LIG     1      -7.165 -35.178  -2.077  1.00  0.00    -0.051 C 
+HETATM   57  C   LIG     1      -5.778 -34.822  -1.526  1.00  0.00    -0.040 C 
+HETATM   58  H   LIG     1      -7.031 -35.809  -2.966  1.00  0.00     0.034 H 
+HETATM   59  H   LIG     1      -7.665 -35.819  -1.338  1.00  0.00     0.034 H 
+HETATM   60  C   LIG     1      -5.699 -33.609  -0.596  1.00  0.00     0.035 C 
+HETATM   61  H   LIG     1      -5.106 -34.651  -2.373  1.00  0.00     0.036 H 
+HETATM   62  H   LIG     1      -5.393 -35.704  -0.998  1.00  0.00     0.036 H 
+HETATM   63  C   LIG     1      -6.698 -32.498  -0.897  1.00  0.00    -0.040 C 
+HETATM   64  H   LIG     1      -4.686 -33.186  -0.652  1.00  0.00     0.082 H 
+HETATM   65  C   LIG     1      -8.097 -33.010  -1.226  1.00  0.00    -0.051 C 
+HETATM   66  H   LIG     1      -6.334 -31.889  -1.732  1.00  0.00     0.036 H 
+HETATM   67  H   LIG     1      -6.779 -31.834  -0.023  1.00  0.00     0.036 H 
+HETATM   68  H   LIG     1      -8.755 -32.158  -1.421  1.00  0.00     0.034 H 
+HETATM   69  H   LIG     1      -8.508 -33.511  -0.338  1.00  0.00     0.034 H 
+HETATM   70  H   LIG     1      -9.119 -34.424  -2.451  1.00  0.00     0.054 H 
+BRANCH  60  71
+HETATM   71  O   LIG     1      -5.897 -34.021   0.756  1.00  0.00    -0.396 OA
+HETATM   72  H   LIG     1      -6.263 -33.253   1.231  1.00  0.00     0.210 HD
+ENDBRANCH  60  71
+ENDBRANCH  52  55
+ENDBRANCH  48  51
+ENDBRANCH  45  48
+ENDBRANCH   3  45
+TORSDOF 11
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:      -6.7      5.205      7.725
+REMARK  11 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N_1  and  S_2 
+REMARK    2  A    between atoms: S_2  and  C_5 
+REMARK    3  A    between atoms: C_8  and  C_9 
+REMARK    4  A    between atoms: C_9  and  C_10 
+REMARK    5  A    between atoms: C_14  and  N_15 
+REMARK       I    between atoms: N_15  and  C_16 
+REMARK       I    between atoms: C_16  and  N_18 
+REMARK    6  A    between atoms: N_18  and  C_19 
+REMARK    7  A    between atoms: C_21  and  C_22 
+REMARK    8  A    between atoms: C_22  and  C_23 
+REMARK    9  A    between atoms: C_23  and  N_24 
+REMARK       I    between atoms: N_24  and  C_25 
+REMARK   10  A    between atoms: C_25  and  C_27 
+REMARK   11  A    between atoms: C_30  and  O_31 
+ROOT
+HETATM    1  C   LIG     1     -14.319 -29.231  -1.270  1.00  0.00     0.054 A 
+HETATM    2  C   LIG     1     -14.987 -28.269  -2.030  1.00  0.00    -0.048 A 
+HETATM    3  C   LIG     1     -15.493 -27.112  -1.427  1.00  0.00    -0.037 A 
+HETATM    4  C   LIG     1     -15.279 -26.967  -0.060  1.00  0.00     0.008 A 
+HETATM    5  N   LIG     1     -14.628 -27.872   0.708  1.00  0.00    -0.270 NA
+HETATM    6  C   LIG     1     -14.170 -28.989   0.090  1.00  0.00     0.028 A 
+HETATM    7  H   LIG     1     -15.165 -28.447  -3.087  1.00  0.00     0.087 H 
+HETATM    8  H   LIG     1     -15.643 -26.097   0.482  1.00  0.00     0.115 H 
+HETATM    9  H   LIG     1     -13.632 -29.674   0.739  1.00  0.00     0.118 H 
+ENDROOT
+BRANCH   1  10
+HETATM   10  N   LIG     1     -13.795 -30.356  -1.933  1.00  0.00    -0.307 N 
+HETATM   11  C   LIG     1     -12.500 -30.431  -2.425  1.00  0.00     0.325 C 
+HETATM   12  N   LIG     1     -12.311 -31.651  -3.047  1.00  0.00    -0.309 N 
+HETATM   13  O   LIG     1     -11.663 -29.547  -2.320  1.00  0.00    -0.247 OA
+HETATM   14  H   LIG     1     -13.106 -31.905  -3.616  1.00  0.00     0.170 HD
+HETATM   15  H   LIG     1     -14.145 -31.254  -1.637  1.00  0.00     0.170 HD
+BRANCH  12  16
+HETATM   16  C   LIG     1     -11.061 -32.124  -3.503  1.00  0.00     0.036 A 
+HETATM   17  C   LIG     1     -10.603 -31.635  -4.726  1.00  0.00    -0.057 A 
+HETATM   18  C   LIG     1      -9.411 -32.108  -5.264  1.00  0.00    -0.080 A 
+HETATM   19  H   LIG     1     -11.139 -30.852  -5.254  1.00  0.00     0.086 H 
+HETATM   20  C   LIG     1      -8.703 -33.118  -4.614  1.00  0.00    -0.076 A 
+HETATM   21  H   LIG     1      -9.033 -31.705  -6.198  1.00  0.00     0.083 H 
+HETATM   22  C   LIG     1      -9.143 -33.649  -3.392  1.00  0.00    -0.052 A 
+HETATM   23  H   LIG     1      -7.799 -33.485  -5.094  1.00  0.00     0.084 H 
+HETATM   24  C   LIG     1     -10.328 -33.119  -2.830  1.00  0.00    -0.051 A 
+HETATM   25  H   LIG     1     -10.702 -33.517  -1.890  1.00  0.00     0.087 H 
+BRANCH  22  26
+HETATM   26  C   LIG     1      -8.404 -34.788  -2.689  1.00  0.00    -0.017 C 
+HETATM   27  H   LIG     1      -9.126 -35.350  -2.083  1.00  0.00     0.047 H 
+HETATM   28  H   LIG     1      -8.029 -35.480  -3.454  1.00  0.00     0.047 H 
+BRANCH  26  29
+HETATM   29  C   LIG     1      -7.234 -34.399  -1.787  1.00  0.00    -0.054 A 
+HETATM   30  C   LIG     1      -6.277 -35.359  -1.415  1.00  0.00    -0.075 A 
+HETATM   31  C   LIG     1      -5.294 -35.061  -0.464  1.00  0.00    -0.060 A 
+HETATM   32  H   LIG     1      -6.325 -36.361  -1.839  1.00  0.00     0.084 H 
+HETATM   33  C   LIG     1      -5.256 -33.787   0.113  1.00  0.00     0.074 A 
+HETATM   34  H   LIG     1      -4.607 -35.851  -0.171  1.00  0.00     0.085 H 
+HETATM   35  C   LIG     1      -6.152 -32.803  -0.295  1.00  0.00    -0.060 A 
+HETATM   36  C   LIG     1      -7.134 -33.108  -1.242  1.00  0.00    -0.075 A 
+HETATM   37  H   LIG     1      -6.105 -31.815   0.147  1.00  0.00     0.085 H 
+HETATM   38  H   LIG     1      -7.847 -32.338  -1.523  1.00  0.00     0.084 H 
+BRANCH  33  39
+HETATM   39  S   LIG     1      -4.154 -33.421   1.458  1.00  0.00     0.239 S 
+HETATM   40  O   LIG     1      -2.890 -34.050   1.180  1.00  0.00    -0.206 OA
+HETATM   41  O   LIG     1      -4.862 -33.671   2.702  1.00  0.00    -0.206 OA
+BRANCH  39  42
+HETATM   42  N   LIG     1      -3.964 -31.744   1.365  1.00  0.00    -0.225 NA
+HETATM   43  H   LIG     1      -4.047 -31.254   2.257  1.00  0.00     0.136 HD
+HETATM   44  H   LIG     1      -4.556 -31.346   0.620  1.00  0.00     0.136 HD
+ENDBRANCH  39  42
+ENDBRANCH  33  39
+ENDBRANCH  26  29
+ENDBRANCH  22  26
+ENDBRANCH  12  16
+ENDBRANCH   1  10
+BRANCH   3  45
+HETATM   45  C   LIG     1     -16.294 -26.100  -2.208  1.00  0.00    -0.025 C 
+HETATM   46  H   LIG     1     -17.286 -26.509  -2.443  1.00  0.00     0.042 H 
+HETATM   47  H   LIG     1     -15.791 -25.962  -3.176  1.00  0.00     0.042 H 
+BRANCH  45  48
+HETATM   48  C   LIG     1     -16.449 -24.725  -1.539  1.00  0.00    -0.001 C 
+HETATM   49  H   LIG     1     -16.408 -24.860  -0.453  1.00  0.00     0.064 H 
+HETATM   50  H   LIG     1     -17.424 -24.288  -1.776  1.00  0.00     0.064 H 
+BRANCH  48  51
+HETATM   51  N   LIG     1     -15.402 -23.766  -1.880  1.00  0.00    -0.360 N 
+HETATM   52  C   LIG     1     -15.557 -22.414  -1.633  1.00  0.00     0.221 C 
+HETATM   53  O   LIG     1     -16.592 -21.956  -1.148  1.00  0.00    -0.273 OA
+HETATM   54  H   LIG     1     -14.466 -24.123  -2.022  1.00  0.00     0.162 HD
+BRANCH  52  55
+HETATM   55  C   LIG     1     -14.398 -21.516  -2.118  1.00  0.00     0.024 C 
+HETATM   56  C   LIG     1     -14.263 -20.215  -1.312  1.00  0.00    -0.051 C 
+HETATM   57  C   LIG     1     -13.449 -20.291  -0.014  1.00  0.00    -0.040 C 
+HETATM   58  H   LIG     1     -15.255 -19.807  -1.073  1.00  0.00     0.034 H 
+HETATM   59  H   LIG     1     -13.790 -19.468  -1.962  1.00  0.00     0.034 H 
+HETATM   60  C   LIG     1     -12.242 -21.233  -0.015  1.00  0.00     0.035 C 
+HETATM   61  H   LIG     1     -14.121 -20.595   0.796  1.00  0.00     0.036 H 
+HETATM   62  H   LIG     1     -13.112 -19.276   0.227  1.00  0.00     0.036 H 
+HETATM   63  C   LIG     1     -12.391 -22.475  -0.884  1.00  0.00    -0.040 C 
+HETATM   64  H   LIG     1     -12.044 -21.555   1.017  1.00  0.00     0.082 H 
+HETATM   65  C   LIG     1     -13.035 -22.196  -2.239  1.00  0.00    -0.051 C 
+HETATM   66  H   LIG     1     -12.985 -23.228  -0.354  1.00  0.00     0.036 H 
+HETATM   67  H   LIG     1     -11.399 -22.914  -1.066  1.00  0.00     0.036 H 
+HETATM   68  H   LIG     1     -13.100 -23.130  -2.805  1.00  0.00     0.034 H 
+HETATM   69  H   LIG     1     -12.370 -21.539  -2.817  1.00  0.00     0.034 H 
+HETATM   70  H   LIG     1     -14.709 -21.225  -3.131  1.00  0.00     0.054 H 
+BRANCH  60  71
+HETATM   71  O   LIG     1     -11.079 -20.529  -0.453  1.00  0.00    -0.396 OA
+HETATM   72  H   LIG     1     -11.080 -19.672   0.011  1.00  0.00     0.210 HD
+ENDBRANCH  60  71
+ENDBRANCH  52  55
+ENDBRANCH  48  51
+ENDBRANCH  45  48
+ENDBRANCH   3  45
+TORSDOF 11
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:      -6.5      3.914      6.758
+REMARK  11 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N_1  and  S_2 
+REMARK    2  A    between atoms: S_2  and  C_5 
+REMARK    3  A    between atoms: C_8  and  C_9 
+REMARK    4  A    between atoms: C_9  and  C_10 
+REMARK    5  A    between atoms: C_14  and  N_15 
+REMARK       I    between atoms: N_15  and  C_16 
+REMARK       I    between atoms: C_16  and  N_18 
+REMARK    6  A    between atoms: N_18  and  C_19 
+REMARK    7  A    between atoms: C_21  and  C_22 
+REMARK    8  A    between atoms: C_22  and  C_23 
+REMARK    9  A    between atoms: C_23  and  N_24 
+REMARK       I    between atoms: N_24  and  C_25 
+REMARK   10  A    between atoms: C_25  and  C_27 
+REMARK   11  A    between atoms: C_30  and  O_31 
+ROOT
+HETATM    1  C   LIG     1     -12.366 -25.504  -4.142  1.00  0.00     0.054 A 
+HETATM    2  C   LIG     1     -13.447 -26.328  -3.821  1.00  0.00    -0.048 A 
+HETATM    3  C   LIG     1     -14.512 -25.837  -3.058  1.00  0.00    -0.037 A 
+HETATM    4  C   LIG     1     -14.445 -24.504  -2.663  1.00  0.00     0.008 A 
+HETATM    5  N   LIG     1     -13.420 -23.674  -2.963  1.00  0.00    -0.270 NA
+HETATM    6  C   LIG     1     -12.397 -24.192  -3.688  1.00  0.00     0.028 A 
+HETATM    7  H   LIG     1     -13.434 -27.373  -4.118  1.00  0.00     0.087 H 
+HETATM    8  H   LIG     1     -15.232 -24.050  -2.066  1.00  0.00     0.115 H 
+HETATM    9  H   LIG     1     -11.610 -23.483  -3.927  1.00  0.00     0.118 H 
+ENDROOT
+BRANCH   1  10
+HETATM   10  N   LIG     1     -11.341 -26.037  -4.946  1.00  0.00    -0.307 N 
+HETATM   11  C   LIG     1     -11.024 -27.386  -5.006  1.00  0.00     0.325 C 
+HETATM   12  N   LIG     1      -9.954 -27.573  -5.861  1.00  0.00    -0.309 N 
+HETATM   13  O   LIG     1     -11.609 -28.266  -4.392  1.00  0.00    -0.247 OA
+HETATM   14  H   LIG     1      -9.242 -26.871  -5.723  1.00  0.00     0.170 HD
+HETATM   15  H   LIG     1     -11.164 -25.562  -5.819  1.00  0.00     0.170 HD
+BRANCH  12  16
+HETATM   16  C   LIG     1      -9.488 -28.837  -6.284  1.00  0.00     0.036 A 
+HETATM   17  C   LIG     1      -9.514 -29.099  -7.654  1.00  0.00    -0.057 A 
+HETATM   18  C   LIG     1      -9.130 -30.347  -8.132  1.00  0.00    -0.080 A 
+HETATM   19  H   LIG     1      -9.788 -28.329  -8.367  1.00  0.00     0.086 H 
+HETATM   20  C   LIG     1      -8.780 -31.361  -7.240  1.00  0.00    -0.076 A 
+HETATM   21  H   LIG     1      -9.115 -30.545  -9.199  1.00  0.00     0.083 H 
+HETATM   22  C   LIG     1      -8.761 -31.140  -5.854  1.00  0.00    -0.052 A 
+HETATM   23  H   LIG     1      -8.527 -32.332  -7.659  1.00  0.00     0.084 H 
+HETATM   24  C   LIG     1      -9.100 -29.849  -5.387  1.00  0.00    -0.051 A 
+HETATM   25  H   LIG     1      -9.107 -29.649  -4.318  1.00  0.00     0.087 H 
+BRANCH  22  26
+HETATM   26  C   LIG     1      -8.423 -32.252  -4.861  1.00  0.00    -0.017 C 
+HETATM   27  H   LIG     1      -8.570 -33.219  -5.358  1.00  0.00     0.047 H 
+HETATM   28  H   LIG     1      -7.356 -32.182  -4.615  1.00  0.00     0.047 H 
+BRANCH  26  29
+HETATM   29  C   LIG     1      -9.211 -32.271  -3.551  1.00  0.00    -0.054 A 
+HETATM   30  C   LIG     1     -10.604 -32.449  -3.566  1.00  0.00    -0.075 A 
+HETATM   31  C   LIG     1     -11.358 -32.309  -2.394  1.00  0.00    -0.060 A 
+HETATM   32  H   LIG     1     -11.112 -32.659  -4.506  1.00  0.00     0.084 H 
+HETATM   33  C   LIG     1     -10.712 -32.000  -1.192  1.00  0.00     0.074 A 
+HETATM   34  H   LIG     1     -12.438 -32.407  -2.464  1.00  0.00     0.085 H 
+HETATM   35  C   LIG     1      -9.325 -31.888  -1.146  1.00  0.00    -0.060 A 
+HETATM   36  C   LIG     1      -8.579 -32.026  -2.320  1.00  0.00    -0.075 A 
+HETATM   37  H   LIG     1      -8.834 -31.663  -0.207  1.00  0.00     0.085 H 
+HETATM   38  H   LIG     1      -7.501 -31.901  -2.273  1.00  0.00     0.084 H 
+BRANCH  33  39
+HETATM   39  S   LIG     1     -11.639 -31.624   0.277  1.00  0.00     0.239 S 
+HETATM   40  O   LIG     1     -11.321 -32.616   1.269  1.00  0.00    -0.206 OA
+HETATM   41  O   LIG     1     -13.014 -31.363  -0.113  1.00  0.00    -0.206 OA
+BRANCH  39  42
+HETATM   42  N   LIG     1     -11.010 -30.134   0.768  1.00  0.00    -0.225 NA
+HETATM   43  H   LIG     1     -10.297 -29.746   0.149  1.00  0.00     0.136 HD
+HETATM   44  H   LIG     1     -10.724 -30.163   1.758  1.00  0.00     0.136 HD
+ENDBRANCH  39  42
+ENDBRANCH  33  39
+ENDBRANCH  26  29
+ENDBRANCH  22  26
+ENDBRANCH  12  16
+ENDBRANCH   1  10
+BRANCH   3  45
+HETATM   45  C   LIG     1     -15.648 -26.728  -2.623  1.00  0.00    -0.025 C 
+HETATM   46  H   LIG     1     -15.841 -27.491  -3.389  1.00  0.00     0.042 H 
+HETATM   47  H   LIG     1     -16.555 -26.107  -2.586  1.00  0.00     0.042 H 
+BRANCH  45  48
+HETATM   48  C   LIG     1     -15.467 -27.407  -1.255  1.00  0.00    -0.001 C 
+HETATM   49  H   LIG     1     -14.797 -28.265  -1.380  1.00  0.00     0.064 H 
+HETATM   50  H   LIG     1     -16.423 -27.792  -0.885  1.00  0.00     0.064 H 
+BRANCH  48  51
+HETATM   51  N   LIG     1     -14.868 -26.555  -0.232  1.00  0.00    -0.360 N 
+HETATM   52  C   LIG     1     -13.668 -26.888   0.367  1.00  0.00     0.221 C 
+HETATM   53  O   LIG     1     -13.069 -27.927   0.092  1.00  0.00    -0.273 OA
+HETATM   54  H   LIG     1     -15.181 -25.594  -0.179  1.00  0.00     0.162 HD
+BRANCH  52  55
+HETATM   55  C   LIG     1     -13.199 -25.930   1.485  1.00  0.00     0.024 C 
+HETATM   56  C   LIG     1     -12.587 -26.661   2.690  1.00  0.00    -0.051 C 
+HETATM   57  C   LIG     1     -11.098 -27.019   2.593  1.00  0.00    -0.040 C 
+HETATM   58  H   LIG     1     -13.148 -27.579   2.908  1.00  0.00     0.034 H 
+HETATM   59  H   LIG     1     -12.721 -26.020   3.572  1.00  0.00     0.034 H 
+HETATM   60  C   LIG     1     -10.198 -26.022   1.858  1.00  0.00     0.035 C 
+HETATM   61  H   LIG     1     -11.010 -27.992   2.098  1.00  0.00     0.036 H 
+HETATM   62  H   LIG     1     -10.722 -27.156   3.614  1.00  0.00     0.036 H 
+HETATM   63  C   LIG     1     -10.867 -25.268   0.715  1.00  0.00    -0.040 C 
+HETATM   64  H   LIG     1      -9.330 -26.561   1.455  1.00  0.00     0.082 H 
+HETATM   65  C   LIG     1     -12.279 -24.792   1.044  1.00  0.00    -0.051 C 
+HETATM   66  H   LIG     1     -10.902 -25.903  -0.176  1.00  0.00     0.036 H 
+HETATM   67  H   LIG     1     -10.264 -24.384   0.460  1.00  0.00     0.036 H 
+HETATM   68  H   LIG     1     -12.687 -24.256   0.183  1.00  0.00     0.034 H 
+HETATM   69  H   LIG     1     -12.223 -24.057   1.859  1.00  0.00     0.034 H 
+HETATM   70  H   LIG     1     -14.135 -25.476   1.838  1.00  0.00     0.054 H 
+BRANCH  60  71
+HETATM   71  O   LIG     1      -9.688 -25.058   2.780  1.00  0.00    -0.396 OA
+HETATM   72  H   LIG     1      -8.800 -24.814   2.466  1.00  0.00     0.210 HD
+ENDBRANCH  60  71
+ENDBRANCH  52  55
+ENDBRANCH  48  51
+ENDBRANCH  45  48
+ENDBRANCH   3  45
+TORSDOF 11
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:      -6.4      3.374      6.954
+REMARK  11 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N_1  and  S_2 
+REMARK    2  A    between atoms: S_2  and  C_5 
+REMARK    3  A    between atoms: C_8  and  C_9 
+REMARK    4  A    between atoms: C_9  and  C_10 
+REMARK    5  A    between atoms: C_14  and  N_15 
+REMARK       I    between atoms: N_15  and  C_16 
+REMARK       I    between atoms: C_16  and  N_18 
+REMARK    6  A    between atoms: N_18  and  C_19 
+REMARK    7  A    between atoms: C_21  and  C_22 
+REMARK    8  A    between atoms: C_22  and  C_23 
+REMARK    9  A    between atoms: C_23  and  N_24 
+REMARK       I    between atoms: N_24  and  C_25 
+REMARK   10  A    between atoms: C_25  and  C_27 
+REMARK   11  A    between atoms: C_30  and  O_31 
+ROOT
+HETATM    1  C   LIG     1     -13.962 -23.489  -2.955  1.00  0.00     0.054 A 
+HETATM    2  C   LIG     1     -14.470 -24.728  -2.561  1.00  0.00    -0.048 A 
+HETATM    3  C   LIG     1     -15.547 -24.804  -1.670  1.00  0.00    -0.037 A 
+HETATM    4  C   LIG     1     -16.084 -23.599  -1.225  1.00  0.00     0.008 A 
+HETATM    5  N   LIG     1     -15.626 -22.380  -1.592  1.00  0.00    -0.270 NA
+HETATM    6  C   LIG     1     -14.569 -22.349  -2.443  1.00  0.00     0.028 A 
+HETATM    7  H   LIG     1     -13.990 -25.640  -2.904  1.00  0.00     0.087 H 
+HETATM    8  H   LIG     1     -16.920 -23.575  -0.530  1.00  0.00     0.115 H 
+HETATM    9  H   LIG     1     -14.252 -21.351  -2.730  1.00  0.00     0.118 H 
+ENDROOT
+BRANCH   1  10
+HETATM   10  N   LIG     1     -12.905 -23.469  -3.885  1.00  0.00    -0.307 N 
+HETATM   11  C   LIG     1     -12.501 -24.573  -4.621  1.00  0.00     0.325 C 
+HETATM   12  N   LIG     1     -11.422 -24.229  -5.415  1.00  0.00    -0.309 N 
+HETATM   13  O   LIG     1     -13.026 -25.675  -4.569  1.00  0.00    -0.247 OA
+HETATM   14  H   LIG     1     -10.757 -23.660  -4.912  1.00  0.00     0.170 HD
+HETATM   15  H   LIG     1     -12.762 -22.603  -4.381  1.00  0.00     0.170 HD
+BRANCH  12  16
+HETATM   16  C   LIG     1     -10.874 -25.064  -6.414  1.00  0.00     0.036 A 
+HETATM   17  C   LIG     1     -11.472 -25.026  -7.673  1.00  0.00    -0.057 A 
+HETATM   18  C   LIG     1     -11.024 -25.869  -8.683  1.00  0.00    -0.080 A 
+HETATM   19  H   LIG     1     -12.260 -24.313  -7.899  1.00  0.00     0.086 H 
+HETATM   20  C   LIG     1     -10.019 -26.800  -8.423  1.00  0.00    -0.076 A 
+HETATM   21  H   LIG     1     -11.462 -25.818  -9.675  1.00  0.00     0.083 H 
+HETATM   22  C   LIG     1      -9.408 -26.882  -7.162  1.00  0.00    -0.052 A 
+HETATM   23  H   LIG     1      -9.731 -27.467  -9.232  1.00  0.00     0.084 H 
+HETATM   24  C   LIG     1      -9.836 -25.979  -6.161  1.00  0.00    -0.051 A 
+HETATM   25  H   LIG     1      -9.391 -26.025  -5.170  1.00  0.00     0.087 H 
+BRANCH  22  26
+HETATM   26  C   LIG     1      -8.337 -27.926  -6.846  1.00  0.00    -0.017 C 
+HETATM   27  H   LIG     1      -7.920 -28.294  -7.792  1.00  0.00     0.047 H 
+HETATM   28  H   LIG     1      -7.517 -27.429  -6.312  1.00  0.00     0.047 H 
+BRANCH  26  29
+HETATM   29  C   LIG     1      -8.774 -29.136  -6.022  1.00  0.00    -0.054 A 
+HETATM   30  C   LIG     1      -7.864 -29.771  -5.159  1.00  0.00    -0.075 A 
+HETATM   31  C   LIG     1      -8.198 -30.972  -4.521  1.00  0.00    -0.060 A 
+HETATM   32  H   LIG     1      -6.871 -29.347  -5.015  1.00  0.00     0.084 H 
+HETATM   33  C   LIG     1      -9.459 -31.539  -4.736  1.00  0.00     0.074 A 
+HETATM   34  H   LIG     1      -7.444 -31.451  -3.903  1.00  0.00     0.085 H 
+HETATM   35  C   LIG     1     -10.397 -30.889  -5.533  1.00  0.00    -0.060 A 
+HETATM   36  C   LIG     1     -10.056 -29.691  -6.170  1.00  0.00    -0.075 A 
+HETATM   37  H   LIG     1     -11.376 -31.329  -5.682  1.00  0.00     0.085 H 
+HETATM   38  H   LIG     1     -10.788 -29.215  -6.816  1.00  0.00     0.084 H 
+BRANCH  33  39
+HETATM   39  S   LIG     1      -9.858 -33.152  -4.106  1.00  0.00     0.239 S 
+HETATM   40  O   LIG     1     -10.866 -32.995  -3.092  1.00  0.00    -0.206 OA
+HETATM   41  O   LIG     1      -8.613 -33.849  -3.830  1.00  0.00    -0.206 OA
+BRANCH  39  42
+HETATM   42  N   LIG     1     -10.538 -33.937  -5.440  1.00  0.00    -0.225 NA
+HETATM   43  H   LIG     1     -10.119 -33.696  -6.338  1.00  0.00     0.136 HD
+HETATM   44  H   LIG     1     -11.567 -33.857  -5.429  1.00  0.00     0.136 HD
+ENDBRANCH  39  42
+ENDBRANCH  33  39
+ENDBRANCH  26  29
+ENDBRANCH  22  26
+ENDBRANCH  12  16
+ENDBRANCH   1  10
+BRANCH   3  45
+HETATM   45  C   LIG     1     -16.057 -26.127  -1.159  1.00  0.00    -0.025 C 
+HETATM   46  H   LIG     1     -16.262 -26.800  -2.002  1.00  0.00     0.042 H 
+HETATM   47  H   LIG     1     -17.031 -25.940  -0.684  1.00  0.00     0.042 H 
+BRANCH  45  48
+HETATM   48  C   LIG     1     -15.148 -26.837  -0.143  1.00  0.00    -0.001 C 
+HETATM   49  H   LIG     1     -15.776 -27.434   0.527  1.00  0.00     0.064 H 
+HETATM   50  H   LIG     1     -14.616 -26.107   0.475  1.00  0.00     0.064 H 
+BRANCH  48  51
+HETATM   51  N   LIG     1     -14.180 -27.755  -0.735  1.00  0.00    -0.360 N 
+HETATM   52  C   LIG     1     -14.565 -28.991  -1.220  1.00  0.00     0.221 C 
+HETATM   53  O   LIG     1     -15.728 -29.385  -1.145  1.00  0.00    -0.273 OA
+HETATM   54  H   LIG     1     -13.298 -27.369  -1.051  1.00  0.00     0.162 HD
+BRANCH  52  55
+HETATM   55  C   LIG     1     -13.418 -29.881  -1.746  1.00  0.00     0.024 C 
+HETATM   56  C   LIG     1     -13.655 -31.380  -1.504  1.00  0.00    -0.051 C 
+HETATM   57  C   LIG     1     -14.497 -32.121  -2.552  1.00  0.00    -0.040 C 
+HETATM   58  H   LIG     1     -14.112 -31.542  -0.518  1.00  0.00     0.034 H 
+HETATM   59  H   LIG     1     -12.674 -31.870  -1.454  1.00  0.00     0.034 H 
+HETATM   60  C   LIG     1     -14.333 -31.673  -4.006  1.00  0.00     0.035 C 
+HETATM   61  H   LIG     1     -15.552 -32.021  -2.278  1.00  0.00     0.036 H 
+HETATM   62  H   LIG     1     -14.257 -33.189  -2.476  1.00  0.00     0.036 H 
+HETATM   63  C   LIG     1     -14.027 -30.192  -4.196  1.00  0.00    -0.040 C 
+HETATM   64  H   LIG     1     -15.255 -31.908  -4.555  1.00  0.00     0.082 H 
+HETATM   65  C   LIG     1     -13.007 -29.648  -3.200  1.00  0.00    -0.051 C 
+HETATM   66  H   LIG     1     -14.952 -29.610  -4.115  1.00  0.00     0.036 H 
+HETATM   67  H   LIG     1     -13.629 -30.029  -5.209  1.00  0.00     0.036 H 
+HETATM   68  H   LIG     1     -12.836 -28.587  -3.405  1.00  0.00     0.034 H 
+HETATM   69  H   LIG     1     -12.044 -30.149  -3.372  1.00  0.00     0.034 H 
+HETATM   70  H   LIG     1     -12.565 -29.595  -1.116  1.00  0.00     0.054 H 
+BRANCH  60  71
+HETATM   71  O   LIG     1     -13.286 -32.419  -4.628  1.00  0.00    -0.396 OA
+HETATM   72  H   LIG     1     -13.564 -33.352  -4.616  1.00  0.00     0.210 HD
+ENDBRANCH  60  71
+ENDBRANCH  52  55
+ENDBRANCH  48  51
+ENDBRANCH  45  48
+ENDBRANCH   3  45
+TORSDOF 11
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:      -5.9      3.443      5.942
+REMARK  11 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N_1  and  S_2 
+REMARK    2  A    between atoms: S_2  and  C_5 
+REMARK    3  A    between atoms: C_8  and  C_9 
+REMARK    4  A    between atoms: C_9  and  C_10 
+REMARK    5  A    between atoms: C_14  and  N_15 
+REMARK       I    between atoms: N_15  and  C_16 
+REMARK       I    between atoms: C_16  and  N_18 
+REMARK    6  A    between atoms: N_18  and  C_19 
+REMARK    7  A    between atoms: C_21  and  C_22 
+REMARK    8  A    between atoms: C_22  and  C_23 
+REMARK    9  A    between atoms: C_23  and  N_24 
+REMARK       I    between atoms: N_24  and  C_25 
+REMARK   10  A    between atoms: C_25  and  C_27 
+REMARK   11  A    between atoms: C_30  and  O_31 
+ROOT
+HETATM    1  C   LIG     1     -13.994 -23.693  -2.809  1.00  0.00     0.054 A 
+HETATM    2  C   LIG     1     -14.701 -24.882  -2.618  1.00  0.00    -0.048 A 
+HETATM    3  C   LIG     1     -15.841 -24.908  -1.807  1.00  0.00    -0.037 A 
+HETATM    4  C   LIG     1     -16.234 -23.703  -1.231  1.00  0.00     0.008 A 
+HETATM    5  N   LIG     1     -15.581 -22.530  -1.402  1.00  0.00    -0.270 NA
+HETATM    6  C   LIG     1     -14.470 -22.550  -2.180  1.00  0.00     0.028 A 
+HETATM    7  H   LIG     1     -14.331 -25.805  -3.056  1.00  0.00     0.087 H 
+HETATM    8  H   LIG     1     -17.108 -23.642  -0.587  1.00  0.00     0.115 H 
+HETATM    9  H   LIG     1     -13.994 -21.583  -2.309  1.00  0.00     0.118 H 
+ENDROOT
+BRANCH   1  10
+HETATM   10  N   LIG     1     -12.878 -23.714  -3.667  1.00  0.00    -0.307 N 
+HETATM   11  C   LIG     1     -12.408 -24.857  -4.299  1.00  0.00     0.325 C 
+HETATM   12  N   LIG     1     -11.285 -24.545  -5.042  1.00  0.00    -0.309 N 
+HETATM   13  O   LIG     1     -12.918 -25.963  -4.206  1.00  0.00    -0.247 OA
+HETATM   14  H   LIG     1     -10.664 -23.930  -4.536  1.00  0.00     0.170 HD
+HETATM   15  H   LIG     1     -12.716 -22.881  -4.211  1.00  0.00     0.170 HD
+BRANCH  12  16
+HETATM   16  C   LIG     1     -10.659 -25.434  -5.944  1.00  0.00     0.036 A 
+HETATM   17  C   LIG     1     -11.113 -25.427  -7.262  1.00  0.00    -0.057 A 
+HETATM   18  C   LIG     1     -10.585 -26.322  -8.186  1.00  0.00    -0.080 A 
+HETATM   19  H   LIG     1     -11.847 -24.702  -7.599  1.00  0.00     0.086 H 
+HETATM   20  C   LIG     1      -9.645 -27.271  -7.783  1.00  0.00    -0.076 A 
+HETATM   21  H   LIG     1     -10.910 -26.298  -9.221  1.00  0.00     0.083 H 
+HETATM   22  C   LIG     1      -9.179 -27.321  -6.460  1.00  0.00    -0.052 A 
+HETATM   23  H   LIG     1      -9.292 -27.977  -8.531  1.00  0.00     0.084 H 
+HETATM   24  C   LIG     1      -9.685 -26.368  -5.545  1.00  0.00    -0.051 A 
+HETATM   25  H   LIG     1      -9.352 -26.388  -4.510  1.00  0.00     0.087 H 
+BRANCH  22  26
+HETATM   26  C   LIG     1      -8.185 -28.383  -5.990  1.00  0.00    -0.017 C 
+HETATM   27  H   LIG     1      -7.745 -28.863  -6.873  1.00  0.00     0.047 H 
+HETATM   28  H   LIG     1      -7.364 -27.878  -5.464  1.00  0.00     0.047 H 
+BRANCH  26  29
+HETATM   29  C   LIG     1      -8.727 -29.482  -5.078  1.00  0.00    -0.054 A 
+HETATM   30  C   LIG     1     -10.095 -29.804  -5.093  1.00  0.00    -0.075 A 
+HETATM   31  C   LIG     1     -10.633 -30.693  -4.154  1.00  0.00    -0.060 A 
+HETATM   32  H   LIG     1     -10.754 -29.327  -5.817  1.00  0.00     0.084 H 
+HETATM   33  C   LIG     1      -9.796 -31.276  -3.197  1.00  0.00     0.074 A 
+HETATM   34  H   LIG     1     -11.705 -30.872  -4.174  1.00  0.00     0.085 H 
+HETATM   35  C   LIG     1      -8.427 -31.022  -3.211  1.00  0.00    -0.060 A 
+HETATM   36  C   LIG     1      -7.895 -30.131  -4.149  1.00  0.00    -0.075 A 
+HETATM   37  H   LIG     1      -7.784 -31.490  -2.475  1.00  0.00     0.085 H 
+HETATM   38  H   LIG     1      -6.831 -29.918  -4.124  1.00  0.00     0.084 H 
+BRANCH  33  39
+HETATM   39  S   LIG     1     -10.460 -32.254  -1.871  1.00  0.00     0.239 S 
+HETATM   40  O   LIG     1      -9.969 -33.598  -2.022  1.00  0.00    -0.206 OA
+HETATM   41  O   LIG     1     -11.884 -31.979  -1.777  1.00  0.00    -0.206 OA
+BRANCH  39  42
+HETATM   42  N   LIG     1      -9.767 -31.568  -0.491  1.00  0.00    -0.225 NA
+HETATM   43  H   LIG     1      -9.062 -32.146  -0.033  1.00  0.00     0.136 HD
+HETATM   44  H   LIG     1     -10.494 -31.217   0.151  1.00  0.00     0.136 HD
+ENDBRANCH  39  42
+ENDBRANCH  33  39
+ENDBRANCH  26  29
+ENDBRANCH  22  26
+ENDBRANCH  12  16
+ENDBRANCH   1  10
+BRANCH   3  45
+HETATM   45  C   LIG     1     -16.571 -26.194  -1.512  1.00  0.00    -0.025 C 
+HETATM   46  H   LIG     1     -16.617 -26.815  -2.417  1.00  0.00     0.042 H 
+HETATM   47  H   LIG     1     -17.613 -25.931  -1.278  1.00  0.00     0.042 H 
+BRANCH  45  48
+HETATM   48  C   LIG     1     -16.004 -27.022  -0.347  1.00  0.00    -0.001 C 
+HETATM   49  H   LIG     1     -16.523 -27.986  -0.322  1.00  0.00     0.064 H 
+HETATM   50  H   LIG     1     -16.195 -26.524   0.609  1.00  0.00     0.064 H 
+BRANCH  48  51
+HETATM   51  N   LIG     1     -14.579 -27.318  -0.454  1.00  0.00    -0.360 N 
+HETATM   52  C   LIG     1     -13.661 -26.756   0.414  1.00  0.00     0.221 C 
+HETATM   53  O   LIG     1     -13.997 -25.960   1.290  1.00  0.00    -0.273 OA
+HETATM   54  H   LIG     1     -14.308 -28.147  -0.968  1.00  0.00     0.162 HD
+BRANCH  52  55
+HETATM   55  C   LIG     1     -12.183 -27.103   0.128  1.00  0.00     0.024 C 
+HETATM   56  C   LIG     1     -11.452 -26.016  -0.675  1.00  0.00    -0.051 C 
+HETATM   57  C   LIG     1     -10.857 -24.851   0.126  1.00  0.00    -0.040 C 
+HETATM   58  H   LIG     1     -12.112 -25.601  -1.449  1.00  0.00     0.034 H 
+HETATM   59  H   LIG     1     -10.632 -26.501  -1.222  1.00  0.00     0.034 H 
+HETATM   60  C   LIG     1     -10.293 -25.186   1.509  1.00  0.00     0.035 C 
+HETATM   61  H   LIG     1     -11.631 -24.086   0.247  1.00  0.00     0.036 H 
+HETATM   62  H   LIG     1     -10.066 -24.398  -0.484  1.00  0.00     0.036 H 
+HETATM   63  C   LIG     1     -11.004 -26.318   2.241  1.00  0.00    -0.040 C 
+HETATM   64  H   LIG     1     -10.339 -24.286   2.138  1.00  0.00     0.082 H 
+HETATM   65  C   LIG     1     -11.346 -27.503   1.343  1.00  0.00    -0.051 C 
+HETATM   66  H   LIG     1     -11.924 -25.941   2.701  1.00  0.00     0.036 H 
+HETATM   67  H   LIG     1     -10.362 -26.686   3.055  1.00  0.00     0.036 H 
+HETATM   68  H   LIG     1     -11.845 -28.273   1.939  1.00  0.00     0.034 H 
+HETATM   69  H   LIG     1     -10.411 -27.956   0.985  1.00  0.00     0.034 H 
+HETATM   70  H   LIG     1     -12.251 -27.983  -0.527  1.00  0.00     0.054 H 
+BRANCH  60  71
+HETATM   71  O   LIG     1      -8.913 -25.536   1.398  1.00  0.00    -0.396 OA
+HETATM   72  H   LIG     1      -8.453 -24.750   1.052  1.00  0.00     0.210 HD
+ENDBRANCH  60  71
+ENDBRANCH  52  55
+ENDBRANCH  48  51
+ENDBRANCH  45  48
+ENDBRANCH   3  45
+TORSDOF 11
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:      -5.6      3.381      5.186
+REMARK  11 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N_1  and  S_2 
+REMARK    2  A    between atoms: S_2  and  C_5 
+REMARK    3  A    between atoms: C_8  and  C_9 
+REMARK    4  A    between atoms: C_9  and  C_10 
+REMARK    5  A    between atoms: C_14  and  N_15 
+REMARK       I    between atoms: N_15  and  C_16 
+REMARK       I    between atoms: C_16  and  N_18 
+REMARK    6  A    between atoms: N_18  and  C_19 
+REMARK    7  A    between atoms: C_21  and  C_22 
+REMARK    8  A    between atoms: C_22  and  C_23 
+REMARK    9  A    between atoms: C_23  and  N_24 
+REMARK       I    between atoms: N_24  and  C_25 
+REMARK   10  A    between atoms: C_25  and  C_27 
+REMARK   11  A    between atoms: C_30  and  O_31 
+ROOT
+HETATM    1  C   LIG     1     -14.498 -26.256  -1.524  1.00  0.00     0.054 A 
+HETATM    2  C   LIG     1     -13.445 -25.344  -1.620  1.00  0.00    -0.048 A 
+HETATM    3  C   LIG     1     -13.631 -24.005  -1.259  1.00  0.00    -0.037 A 
+HETATM    4  C   LIG     1     -14.892 -23.645  -0.792  1.00  0.00     0.008 A 
+HETATM    5  N   LIG     1     -15.932 -24.502  -0.676  1.00  0.00    -0.270 NA
+HETATM    6  C   LIG     1     -15.718 -25.788  -1.053  1.00  0.00     0.028 A 
+HETATM    7  H   LIG     1     -12.491 -25.664  -2.029  1.00  0.00     0.087 H 
+HETATM    8  H   LIG     1     -15.116 -22.623  -0.494  1.00  0.00     0.115 H 
+HETATM    9  H   LIG     1     -16.572 -26.445  -0.919  1.00  0.00     0.118 H 
+ENDROOT
+BRANCH   1  10
+HETATM   10  N   LIG     1     -14.246 -27.600  -1.860  1.00  0.00    -0.307 N 
+HETATM   11  C   LIG     1     -13.300 -28.392  -1.226  1.00  0.00     0.325 C 
+HETATM   12  N   LIG     1     -13.278 -29.644  -1.811  1.00  0.00    -0.309 N 
+HETATM   13  O   LIG     1     -12.599 -28.028  -0.294  1.00  0.00    -0.247 OA
+HETATM   14  H   LIG     1     -13.325 -29.585  -2.818  1.00  0.00     0.170 HD
+HETATM   15  H   LIG     1     -15.035 -28.134  -2.191  1.00  0.00     0.170 HD
+BRANCH  12  16
+HETATM   16  C   LIG     1     -12.557 -30.747  -1.300  1.00  0.00     0.036 A 
+HETATM   17  C   LIG     1     -12.933 -31.227  -0.046  1.00  0.00    -0.057 A 
+HETATM   18  C   LIG     1     -12.224 -32.267   0.543  1.00  0.00    -0.080 A 
+HETATM   19  H   LIG     1     -13.804 -30.831   0.468  1.00  0.00     0.086 H 
+HETATM   20  C   LIG     1     -11.096 -32.791  -0.089  1.00  0.00    -0.076 A 
+HETATM   21  H   LIG     1     -12.534 -32.668   1.503  1.00  0.00     0.083 H 
+HETATM   22  C   LIG     1     -10.676 -32.320  -1.342  1.00  0.00    -0.052 A 
+HETATM   23  H   LIG     1     -10.550 -33.575   0.430  1.00  0.00     0.084 H 
+HETATM   24  C   LIG     1     -11.441 -31.299  -1.954  1.00  0.00    -0.051 A 
+HETATM   25  H   LIG     1     -11.135 -30.905  -2.920  1.00  0.00     0.087 H 
+BRANCH  22  26
+HETATM   26  C   LIG     1      -9.417 -32.851  -2.028  1.00  0.00    -0.017 C 
+HETATM   27  H   LIG     1      -8.550 -32.308  -1.632  1.00  0.00     0.047 H 
+HETATM   28  H   LIG     1      -9.288 -33.903  -1.744  1.00  0.00     0.047 H 
+BRANCH  26  29
+HETATM   29  C   LIG     1      -9.372 -32.763  -3.553  1.00  0.00    -0.054 A 
+HETATM   30  C   LIG     1      -8.476 -31.884  -4.185  1.00  0.00    -0.075 A 
+HETATM   31  C   LIG     1      -8.533 -31.675  -5.569  1.00  0.00    -0.060 A 
+HETATM   32  H   LIG     1      -7.754 -31.328  -3.589  1.00  0.00     0.084 H 
+HETATM   33  C   LIG     1      -9.485 -32.359  -6.331  1.00  0.00     0.074 A 
+HETATM   34  H   LIG     1      -7.852 -30.948  -6.005  1.00  0.00     0.085 H 
+HETATM   35  C   LIG     1     -10.335 -33.284  -5.731  1.00  0.00    -0.060 A 
+HETATM   36  C   LIG     1     -10.276 -33.487  -4.349  1.00  0.00    -0.075 A 
+HETATM   37  H   LIG     1     -11.059 -33.820  -6.334  1.00  0.00     0.085 H 
+HETATM   38  H   LIG     1     -10.970 -34.187  -3.893  1.00  0.00     0.084 H 
+BRANCH  33  39
+HETATM   39  S   LIG     1      -9.723 -31.984  -8.052  1.00  0.00     0.239 S 
+HETATM   40  O   LIG     1     -10.886 -32.699  -8.505  1.00  0.00    -0.206 OA
+HETATM   41  O   LIG     1      -8.443 -32.125  -8.725  1.00  0.00    -0.206 OA
+BRANCH  39  42
+HETATM   42  N   LIG     1     -10.062 -30.328  -8.050  1.00  0.00    -0.225 NA
+HETATM   43  H   LIG     1      -9.821 -29.842  -8.915  1.00  0.00     0.136 HD
+HETATM   44  H   LIG     1      -9.685 -29.876  -7.204  1.00  0.00     0.136 HD
+ENDBRANCH  39  42
+ENDBRANCH  33  39
+ENDBRANCH  26  29
+ENDBRANCH  22  26
+ENDBRANCH  12  16
+ENDBRANCH   1  10
+BRANCH   3  45
+HETATM   45  C   LIG     1     -12.538 -22.981  -1.435  1.00  0.00    -0.025 C 
+HETATM   46  H   LIG     1     -11.576 -23.402  -1.117  1.00  0.00     0.042 H 
+HETATM   47  H   LIG     1     -12.748 -22.156  -0.739  1.00  0.00     0.042 H 
+BRANCH  45  48
+HETATM   48  C   LIG     1     -12.402 -22.399  -2.852  1.00  0.00    -0.001 C 
+HETATM   49  H   LIG     1     -11.503 -21.774  -2.885  1.00  0.00     0.064 H 
+HETATM   50  H   LIG     1     -13.255 -21.755  -3.089  1.00  0.00     0.064 H 
+BRANCH  48  51
+HETATM   51  N   LIG     1     -12.254 -23.400  -3.905  1.00  0.00    -0.360 N 
+HETATM   52  C   LIG     1     -11.011 -23.894  -4.256  1.00  0.00     0.221 C 
+HETATM   53  O   LIG     1      -9.977 -23.492  -3.723  1.00  0.00    -0.273 OA
+HETATM   54  H   LIG     1     -13.073 -23.933  -4.165  1.00  0.00     0.162 HD
+BRANCH  52  55
+HETATM   55  C   LIG     1     -11.005 -24.888  -5.438  1.00  0.00     0.024 C 
+HETATM   56  C   LIG     1      -9.606 -25.431  -5.764  1.00  0.00    -0.051 C 
+HETATM   57  C   LIG     1      -9.130 -26.643  -4.951  1.00  0.00    -0.040 C 
+HETATM   58  H   LIG     1      -8.854 -24.636  -5.670  1.00  0.00     0.034 H 
+HETATM   59  H   LIG     1      -9.597 -25.715  -6.825  1.00  0.00     0.034 H 
+HETATM   60  C   LIG     1     -10.197 -27.669  -4.562  1.00  0.00     0.035 C 
+HETATM   61  H   LIG     1      -8.655 -26.276  -4.035  1.00  0.00     0.036 H 
+HETATM   62  H   LIG     1      -8.344 -27.143  -5.530  1.00  0.00     0.036 H 
+HETATM   63  C   LIG     1     -11.587 -27.096  -4.316  1.00  0.00    -0.040 C 
+HETATM   64  H   LIG     1      -9.871 -28.188  -3.650  1.00  0.00     0.082 H 
+HETATM   65  C   LIG     1     -12.002 -26.044  -5.341  1.00  0.00    -0.051 C 
+HETATM   66  H   LIG     1     -11.635 -26.658  -3.314  1.00  0.00     0.036 H 
+HETATM   67  H   LIG     1     -12.328 -27.909  -4.350  1.00  0.00     0.036 H 
+HETATM   68  H   LIG     1     -13.008 -25.688  -5.103  1.00  0.00     0.034 H 
+HETATM   69  H   LIG     1     -12.075 -26.522  -6.328  1.00  0.00     0.034 H 
+HETATM   70  H   LIG     1     -11.307 -24.268  -6.293  1.00  0.00     0.054 H 
+BRANCH  60  71
+HETATM   71  O   LIG     1     -10.306 -28.664  -5.581  1.00  0.00    -0.396 OA
+HETATM   72  H   LIG     1      -9.565 -29.281  -5.449  1.00  0.00     0.210 HD
+ENDBRANCH  60  71
+ENDBRANCH  52  55
+ENDBRANCH  48  51
+ENDBRANCH  45  48
+ENDBRANCH   3  45
+TORSDOF 11
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:      -5.5      4.852      6.422
+REMARK  11 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N_1  and  S_2 
+REMARK    2  A    between atoms: S_2  and  C_5 
+REMARK    3  A    between atoms: C_8  and  C_9 
+REMARK    4  A    between atoms: C_9  and  C_10 
+REMARK    5  A    between atoms: C_14  and  N_15 
+REMARK       I    between atoms: N_15  and  C_16 
+REMARK       I    between atoms: C_16  and  N_18 
+REMARK    6  A    between atoms: N_18  and  C_19 
+REMARK    7  A    between atoms: C_21  and  C_22 
+REMARK    8  A    between atoms: C_22  and  C_23 
+REMARK    9  A    between atoms: C_23  and  N_24 
+REMARK       I    between atoms: N_24  and  C_25 
+REMARK   10  A    between atoms: C_25  and  C_27 
+REMARK   11  A    between atoms: C_30  and  O_31 
+ROOT
+HETATM    1  C   LIG     1     -14.552 -27.051  -2.273  1.00  0.00     0.054 A 
+HETATM    2  C   LIG     1     -13.753 -25.948  -1.967  1.00  0.00    -0.048 A 
+HETATM    3  C   LIG     1     -14.335 -24.730  -1.596  1.00  0.00    -0.037 A 
+HETATM    4  C   LIG     1     -15.725 -24.688  -1.532  1.00  0.00     0.008 A 
+HETATM    5  N   LIG     1     -16.531 -25.738  -1.812  1.00  0.00    -0.270 NA
+HETATM    6  C   LIG     1     -15.929 -26.896  -2.185  1.00  0.00     0.028 A 
+HETATM    7  H   LIG     1     -12.674 -26.018  -2.071  1.00  0.00     0.087 H 
+HETATM    8  H   LIG     1     -16.252 -23.778  -1.255  1.00  0.00     0.115 H 
+HETATM    9  H   LIG     1     -16.613 -27.718  -2.375  1.00  0.00     0.118 H 
+ENDROOT
+BRANCH   1  10
+HETATM   10  N   LIG     1     -13.914 -28.263  -2.600  1.00  0.00    -0.307 N 
+HETATM   11  C   LIG     1     -13.010 -28.910  -1.771  1.00  0.00     0.325 C 
+HETATM   12  N   LIG     1     -12.544 -30.052  -2.396  1.00  0.00    -0.309 N 
+HETATM   13  O   LIG     1     -12.683 -28.521  -0.659  1.00  0.00    -0.247 OA
+HETATM   14  H   LIG     1     -12.338 -29.884  -3.370  1.00  0.00     0.170 HD
+HETATM   15  H   LIG     1     -14.441 -28.907  -3.170  1.00  0.00     0.170 HD
+BRANCH  12  16
+HETATM   16  C   LIG     1     -11.746 -31.032  -1.766  1.00  0.00     0.036 A 
+HETATM   17  C   LIG     1     -12.397 -31.948  -0.939  1.00  0.00    -0.057 A 
+HETATM   18  C   LIG     1     -11.663 -32.898  -0.238  1.00  0.00    -0.080 A 
+HETATM   19  H   LIG     1     -13.480 -31.964  -0.863  1.00  0.00     0.086 H 
+HETATM   20  C   LIG     1     -10.270 -32.899  -0.309  1.00  0.00    -0.076 A 
+HETATM   21  H   LIG     1     -12.168 -33.635   0.379  1.00  0.00     0.083 H 
+HETATM   22  C   LIG     1      -9.580 -31.980  -1.115  1.00  0.00    -0.052 A 
+HETATM   23  H   LIG     1      -9.738 -33.634   0.289  1.00  0.00     0.084 H 
+HETATM   24  C   LIG     1     -10.343 -31.055  -1.865  1.00  0.00    -0.051 A 
+HETATM   25  H   LIG     1      -9.837 -30.323  -2.490  1.00  0.00     0.087 H 
+BRANCH  22  26
+HETATM   26  C   LIG     1      -8.053 -31.937  -1.169  1.00  0.00    -0.017 C 
+HETATM   27  H   LIG     1      -7.751 -31.105  -1.817  1.00  0.00     0.047 H 
+HETATM   28  H   LIG     1      -7.678 -31.706  -0.164  1.00  0.00     0.047 H 
+BRANCH  26  29
+HETATM   29  C   LIG     1      -7.343 -33.198  -1.661  1.00  0.00    -0.054 A 
+HETATM   30  C   LIG     1      -7.361 -33.534  -3.025  1.00  0.00    -0.075 A 
+HETATM   31  C   LIG     1      -6.856 -34.763  -3.468  1.00  0.00    -0.060 A 
+HETATM   32  H   LIG     1      -7.810 -32.850  -3.744  1.00  0.00     0.084 H 
+HETATM   33  C   LIG     1      -6.316 -35.661  -2.541  1.00  0.00     0.074 A 
+HETATM   34  H   LIG     1      -6.938 -35.000  -4.525  1.00  0.00     0.085 H 
+HETATM   35  C   LIG     1      -6.227 -35.315  -1.195  1.00  0.00    -0.060 A 
+HETATM   36  C   LIG     1      -6.736 -34.088  -0.759  1.00  0.00    -0.075 A 
+HETATM   37  H   LIG     1      -5.793 -36.012  -0.488  1.00  0.00     0.085 H 
+HETATM   38  H   LIG     1      -6.690 -33.850   0.300  1.00  0.00     0.084 H 
+BRANCH  33  39
+HETATM   39  S   LIG     1      -5.841 -37.303  -3.025  1.00  0.00     0.239 S 
+HETATM   40  O   LIG     1      -5.255 -37.951  -1.882  1.00  0.00    -0.206 OA
+HETATM   41  O   LIG     1      -5.128 -37.213  -4.288  1.00  0.00    -0.206 OA
+BRANCH  39  42
+HETATM   42  N   LIG     1      -7.315 -38.050  -3.382  1.00  0.00    -0.225 NA
+HETATM   43  H   LIG     1      -7.255 -38.816  -4.054  1.00  0.00     0.136 HD
+HETATM   44  H   LIG     1      -8.035 -37.349  -3.619  1.00  0.00     0.136 HD
+ENDBRANCH  39  42
+ENDBRANCH  33  39
+ENDBRANCH  26  29
+ENDBRANCH  22  26
+ENDBRANCH  12  16
+ENDBRANCH   1  10
+BRANCH   3  45
+HETATM   45  C   LIG     1     -13.500 -23.499  -1.346  1.00  0.00    -0.025 C 
+HETATM   46  H   LIG     1     -12.485 -23.790  -1.046  1.00  0.00     0.042 H 
+HETATM   47  H   LIG     1     -13.932 -22.983  -0.476  1.00  0.00     0.042 H 
+BRANCH  45  48
+HETATM   48  C   LIG     1     -13.426 -22.504  -2.516  1.00  0.00    -0.001 C 
+HETATM   49  H   LIG     1     -12.603 -21.806  -2.326  1.00  0.00     0.064 H 
+HETATM   50  H   LIG     1     -14.346 -21.914  -2.579  1.00  0.00     0.064 H 
+BRANCH  48  51
+HETATM   51  N   LIG     1     -13.162 -23.116  -3.815  1.00  0.00    -0.360 N 
+HETATM   52  C   LIG     1     -11.873 -23.264  -4.291  1.00  0.00     0.221 C 
+HETATM   53  O   LIG     1     -10.896 -22.860  -3.660  1.00  0.00    -0.273 OA
+HETATM   54  H   LIG     1     -13.893 -23.686  -4.223  1.00  0.00     0.162 HD
+BRANCH  52  55
+HETATM   55  C   LIG     1     -11.757 -23.858  -5.711  1.00  0.00     0.024 C 
+HETATM   56  C   LIG     1     -10.311 -23.911  -6.229  1.00  0.00    -0.051 C 
+HETATM   57  C   LIG     1      -9.478 -25.134  -5.823  1.00  0.00    -0.040 C 
+HETATM   58  H   LIG     1      -9.763 -23.007  -5.929  1.00  0.00     0.034 H 
+HETATM   59  H   LIG     1     -10.348 -23.879  -7.326  1.00  0.00     0.034 H 
+HETATM   60  C   LIG     1     -10.224 -26.467  -5.717  1.00  0.00     0.035 C 
+HETATM   61  H   LIG     1      -9.009 -24.925  -4.855  1.00  0.00     0.036 H 
+HETATM   62  H   LIG     1      -8.662 -25.236  -6.548  1.00  0.00     0.036 H 
+HETATM   63  C   LIG     1     -11.677 -26.362  -5.269  1.00  0.00    -0.040 C 
+HETATM   64  H   LIG     1      -9.690 -27.115  -5.008  1.00  0.00     0.082 H 
+HETATM   65  C   LIG     1     -12.435 -25.212  -5.925  1.00  0.00    -0.051 C 
+HETATM   66  H   LIG     1     -11.720 -26.244  -4.181  1.00  0.00     0.036 H 
+HETATM   67  H   LIG     1     -12.203 -27.296  -5.515  1.00  0.00     0.036 H 
+HETATM   68  H   LIG     1     -13.466 -25.207  -5.561  1.00  0.00     0.034 H 
+HETATM   69  H   LIG     1     -12.496 -25.401  -7.006  1.00  0.00     0.034 H 
+HETATM   70  H   LIG     1     -12.285 -23.125  -6.337  1.00  0.00     0.054 H 
+BRANCH  60  71
+HETATM   71  O   LIG     1     -10.202 -27.136  -6.978  1.00  0.00    -0.396 OA
+HETATM   72  H   LIG     1      -9.326 -27.553  -7.058  1.00  0.00     0.210 HD
+ENDBRANCH  60  71
+ENDBRANCH  52  55
+ENDBRANCH  48  51
+ENDBRANCH  45  48
+ENDBRANCH   3  45
+TORSDOF 11
+ENDMDL
+MODEL 10
+REMARK VINA RESULT:      -5.5      4.889      7.210
+REMARK  11 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N_1  and  S_2 
+REMARK    2  A    between atoms: S_2  and  C_5 
+REMARK    3  A    between atoms: C_8  and  C_9 
+REMARK    4  A    between atoms: C_9  and  C_10 
+REMARK    5  A    between atoms: C_14  and  N_15 
+REMARK       I    between atoms: N_15  and  C_16 
+REMARK       I    between atoms: C_16  and  N_18 
+REMARK    6  A    between atoms: N_18  and  C_19 
+REMARK    7  A    between atoms: C_21  and  C_22 
+REMARK    8  A    between atoms: C_22  and  C_23 
+REMARK    9  A    between atoms: C_23  and  N_24 
+REMARK       I    between atoms: N_24  and  C_25 
+REMARK   10  A    between atoms: C_25  and  C_27 
+REMARK   11  A    between atoms: C_30  and  O_31 
+ROOT
+HETATM    1  C   LIG     1     -13.558 -26.965  -2.766  1.00  0.00     0.054 A 
+HETATM    2  C   LIG     1     -13.360 -26.287  -1.561  1.00  0.00    -0.048 A 
+HETATM    3  C   LIG     1     -14.418 -25.610  -0.944  1.00  0.00    -0.037 A 
+HETATM    4  C   LIG     1     -15.657 -25.667  -1.576  1.00  0.00     0.008 A 
+HETATM    5  N   LIG     1     -15.890 -26.321  -2.737  1.00  0.00    -0.270 NA
+HETATM    6  C   LIG     1     -14.834 -26.949  -3.313  1.00  0.00     0.028 A 
+HETATM    7  H   LIG     1     -12.365 -26.238  -1.128  1.00  0.00     0.087 H 
+HETATM    8  H   LIG     1     -16.528 -25.164  -1.160  1.00  0.00     0.115 H 
+HETATM    9  H   LIG     1     -15.073 -27.482  -4.229  1.00  0.00     0.118 H 
+ENDROOT
+BRANCH   1  10
+HETATM   10  N   LIG     1     -12.470 -27.664  -3.322  1.00  0.00    -0.307 N 
+HETATM   11  C   LIG     1     -12.169 -28.987  -3.031  1.00  0.00     0.325 C 
+HETATM   12  N   LIG     1     -11.027 -29.362  -3.713  1.00  0.00    -0.309 N 
+HETATM   13  O   LIG     1     -12.822 -29.701  -2.285  1.00  0.00    -0.247 OA
+HETATM   14  H   LIG     1     -10.320 -28.642  -3.678  1.00  0.00     0.170 HD
+HETATM   15  H   LIG     1     -12.206 -27.408  -4.261  1.00  0.00     0.170 HD
+BRANCH  12  16
+HETATM   16  C   LIG     1     -10.542 -30.687  -3.780  1.00  0.00     0.036 A 
+HETATM   17  C   LIG     1     -11.268 -31.592  -4.552  1.00  0.00    -0.057 A 
+HETATM   18  C   LIG     1     -10.883 -32.927  -4.608  1.00  0.00    -0.080 A 
+HETATM   19  H   LIG     1     -12.113 -31.267  -5.151  1.00  0.00     0.086 H 
+HETATM   20  C   LIG     1      -9.807 -33.377  -3.844  1.00  0.00    -0.076 A 
+HETATM   21  H   LIG     1     -11.425 -33.628  -5.236  1.00  0.00     0.083 H 
+HETATM   22  C   LIG     1      -9.064 -32.499  -3.040  1.00  0.00    -0.052 A 
+HETATM   23  H   LIG     1      -9.569 -34.437  -3.889  1.00  0.00     0.084 H 
+HETATM   24  C   LIG     1      -9.435 -31.134  -3.036  1.00  0.00    -0.051 A 
+HETATM   25  H   LIG     1      -8.886 -30.431  -2.415  1.00  0.00     0.087 H 
+BRANCH  22  26
+HETATM   26  C   LIG     1      -7.910 -32.984  -2.161  1.00  0.00    -0.017 C 
+HETATM   27  H   LIG     1      -7.247 -32.134  -1.959  1.00  0.00     0.047 H 
+HETATM   28  H   LIG     1      -8.323 -33.299  -1.195  1.00  0.00     0.047 H 
+BRANCH  26  29
+HETATM   29  C   LIG     1      -7.057 -34.127  -2.709  1.00  0.00    -0.054 A 
+HETATM   30  C   LIG     1      -6.229 -33.921  -3.825  1.00  0.00    -0.075 A 
+HETATM   31  C   LIG     1      -5.567 -34.993  -4.435  1.00  0.00    -0.060 A 
+HETATM   32  H   LIG     1      -6.131 -32.922  -4.247  1.00  0.00     0.084 H 
+HETATM   33  C   LIG     1      -5.723 -36.284  -3.918  1.00  0.00     0.074 A 
+HETATM   34  H   LIG     1      -4.977 -34.792  -5.325  1.00  0.00     0.085 H 
+HETATM   35  C   LIG     1      -6.484 -36.496  -2.772  1.00  0.00    -0.060 A 
+HETATM   36  C   LIG     1      -7.146 -35.422  -2.169  1.00  0.00    -0.075 A 
+HETATM   37  H   LIG     1      -6.587 -37.497  -2.372  1.00  0.00     0.085 H 
+HETATM   38  H   LIG     1      -7.764 -35.611  -1.296  1.00  0.00     0.084 H 
+BRANCH  33  39
+HETATM   39  S   LIG     1      -5.062 -37.698  -4.767  1.00  0.00     0.239 S 
+HETATM   40  O   LIG     1      -4.709 -38.683  -3.781  1.00  0.00    -0.206 OA
+HETATM   41  O   LIG     1      -4.091 -37.226  -5.741  1.00  0.00    -0.206 OA
+BRANCH  39  42
+HETATM   42  N   LIG     1      -6.376 -38.266  -5.666  1.00  0.00    -0.225 NA
+HETATM   43  H   LIG     1      -6.516 -37.797  -6.562  1.00  0.00     0.136 HD
+HETATM   44  H   LIG     1      -7.227 -38.311  -5.086  1.00  0.00     0.136 HD
+ENDBRANCH  39  42
+ENDBRANCH  33  39
+ENDBRANCH  26  29
+ENDBRANCH  22  26
+ENDBRANCH  12  16
+ENDBRANCH   1  10
+BRANCH   3  45
+HETATM   45  C   LIG     1     -14.212 -24.798   0.309  1.00  0.00    -0.025 C 
+HETATM   46  H   LIG     1     -13.805 -25.434   1.106  1.00  0.00     0.042 H 
+HETATM   47  H   LIG     1     -15.205 -24.480   0.659  1.00  0.00     0.042 H 
+BRANCH  45  48
+HETATM   48  C   LIG     1     -13.330 -23.549   0.147  1.00  0.00    -0.001 C 
+HETATM   49  H   LIG     1     -12.424 -23.833  -0.399  1.00  0.00     0.064 H 
+HETATM   50  H   LIG     1     -13.016 -23.168   1.124  1.00  0.00     0.064 H 
+BRANCH  48  51
+HETATM   51  N   LIG     1     -13.950 -22.465  -0.610  1.00  0.00    -0.360 N 
+HETATM   52  C   LIG     1     -13.544 -21.153  -0.450  1.00  0.00     0.221 C 
+HETATM   53  O   LIG     1     -12.670 -20.836   0.357  1.00  0.00    -0.273 OA
+HETATM   54  H   LIG     1     -14.462 -22.710  -1.448  1.00  0.00     0.162 HD
+BRANCH  52  55
+HETATM   55  C   LIG     1     -14.345 -20.110  -1.260  1.00  0.00     0.024 C 
+HETATM   56  C   LIG     1     -13.483 -18.939  -1.757  1.00  0.00    -0.051 C 
+HETATM   57  C   LIG     1     -12.730 -19.151  -3.078  1.00  0.00    -0.040 C 
+HETATM   58  H   LIG     1     -12.755 -18.645  -0.989  1.00  0.00     0.034 H 
+HETATM   59  H   LIG     1     -14.141 -18.070  -1.882  1.00  0.00     0.034 H 
+HETATM   60  C   LIG     1     -13.437 -19.991  -4.144  1.00  0.00     0.035 C 
+HETATM   61  H   LIG     1     -11.767 -19.622  -2.852  1.00  0.00     0.036 H 
+HETATM   62  H   LIG     1     -12.502 -18.162  -3.493  1.00  0.00     0.036 H 
+HETATM   63  C   LIG     1     -14.338 -21.096  -3.605  1.00  0.00    -0.040 C 
+HETATM   64  H   LIG     1     -12.678 -20.450  -4.793  1.00  0.00     0.082 H 
+HETATM   65  C   LIG     1     -15.185 -20.663  -2.411  1.00  0.00    -0.051 C 
+HETATM   66  H   LIG     1     -13.731 -21.961  -3.318  1.00  0.00     0.036 H 
+HETATM   67  H   LIG     1     -15.022 -21.429  -4.400  1.00  0.00     0.036 H 
+HETATM   68  H   LIG     1     -15.806 -21.503  -2.089  1.00  0.00     0.034 H 
+HETATM   69  H   LIG     1     -15.882 -19.879  -2.739  1.00  0.00     0.034 H 
+HETATM   70  H   LIG     1     -15.040 -19.693  -0.519  1.00  0.00     0.054 H 
+BRANCH  60  71
+HETATM   71  O   LIG     1     -14.231 -19.146  -4.978  1.00  0.00    -0.396 OA
+HETATM   72  H   LIG     1     -14.857 -18.684  -4.392  1.00  0.00     0.210 HD
+ENDBRANCH  60  71
+ENDBRANCH  52  55
+ENDBRANCH  48  51
+ENDBRANCH  45  48
+ENDBRANCH   3  45
+TORSDOF 11
+ENDMDL
