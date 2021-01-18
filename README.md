@@ -6,7 +6,7 @@
 
 ### Purpose
 
-The goal of OCONDOR is to implement multiple docking programs to predict scores between a single target and a library of compounds. The molecules are ranked based on the ECR ranking metric using as input the scores obtained by each program. The protocol is open source and requires to install third-party docking software and the target and ligand structures in PDB format
+The goal of OCONDOR is to implement multiple docking programs to predict scores between a single target or multiple targets (merging and shrinking aproach) and a library of compounds. The molecules are ranked based on the ECR ranking metric using as input the scores obtained by each program. The protocol is open source and requires to install third-party docking software, and information of the targets and ligands structures in PDB format
 
 ### Third-party tools
 
@@ -17,7 +17,7 @@ The script is written in python3 with system calls to the Ubuntu OS. The docking
 - LeDock: http://www.lephar.com/download.htm - stand-alone tools: ledock_linux_x86
 - rDock: https://sourceforge.net/projects/rdock/files/ - stand-alone tools: rbcavity, rbdock and sdsort
 - MGL Tools: http://mgltools.scripps.edu/downloads - stand-alone tools: pythonsh
-- RDKit: http://rdkit.org - version for python3
+- RDKit: http://rdkit.org - version for python3. **A conda environment is available to facilitate the installation.**
 
 In addition to these packages, it is required to install OpenBabel (https://sourceforge.net/projects/openbabel/), which can be obtained from the main OS package repository.
 
@@ -37,8 +37,7 @@ complexes: Final PDB files with the receptor and the docked best ligand in compl
 
 An example of the script syntax is as follows::
 
-`python OCONDOR.py [-h] -l LIST_LIGANDS -s LIST_SOFTWARE -m MODE -t
-                            TARGET [-c CONFIG_FILE]`
+`python OCONDOR.py [-h] -l LIST_LIGANDS -s LIST_SOFTWARE -m MODE -t LIST_TARGETS 
                                        
 where the arguments are:
 
@@ -51,18 +50,17 @@ arguments:
                     the consensus
   -m MODE           Mode the script will be run. Options: (i) docking, (ii)
                     ranking
-  -t TARGET         Name of the PDB structure used as target
-  -c CONFIG_FILE    File containing the center coordinates and size of the box. Note: This is required only for docking mode
+  -t LIST_TARGETS   File with the list of the PDB structures used as targets
  ```
 
-The script has two main modes. One is for running docking with any of the four programs mentioned in the `list_software.txt` file, and the second is for ranking with same list of docking programs. In the following sections we show how to use the main python script, and an additional bash script for ECR ranking. The examples provided in the code were run using the SARS-CoV-2 main protease with PDB id 6y2e.
+The script has two main modes. One is for running docking with any of the four programs mentioned in the `list_software.txt` file, and the second is for ranking with same list of docking programs. In the following sections we show how to use the main python script, and an additional bash script for ECR ranking. The examples provided in the code were run using the SARS-CoV-2 main protease with PDB id 6y2e and 5re4.
 
 ### Docking example
 
 After preparing the "list of software" file, and the "list of ligands" file with the PDB structures located in the `ligands` folder, the command can be run as:
 
 ```
-python OCONDOR.py -m docking -l list_ligands.txt -s list_software.txt -t 6y2e -c config_docking.txt
+python OCONDOR.py -m docking -l list_ligands.txt -s list_software.txt -t list_targets.txt
 ```
 
 For docking, we require to prepare a configuration file with the box center coordinates and the box size dimensions. The following is an example of a box located on the active site of the MPro structure 6y2e provided in the `target` folder:
