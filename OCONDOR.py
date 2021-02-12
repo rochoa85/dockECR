@@ -109,7 +109,6 @@ def run_rdock(target,ligand):
     os.system("./auxiliar/software/rbdock -i {}.sd -o {}_{} -r rdock.prm -p dock.prm -n 10".format(ligand,target,ligand,target))
     os.system("./auxiliar/software/sdsort -n -f'SCORE.INTER' {}_{}.sd > {}_{}.sorted".format(target,ligand,target,ligand))
     os.system("mv {}_{}.sorted results/rdock/{}_{}_out.sd".format(target,ligand,target,ligand))
-    #os.system("rm *.sd *.mol2 rdock* dock.prm")
 
 ########################################################################################
 
@@ -149,9 +148,18 @@ def run_ledock(target,ligand,xmin,xmax,ymin,ymax,zmin,zmax):
 
 def generate_complex(target,ligand,software):
     # Generate complexes with the receptor and the docked ligands
-    os.system("grep HETATM ligand.pdb | sed 's/LIG  /LIG B/g' > ligand_fixed.pdb")
-    bash="wc -l ligand_fixed.pdb | awk '{print $1}'"
-    total_lines=int(subprocess.check_output(['bash','-c', bash]).strip().decode("utf-8"))
+    bash="grep ATOM ligand.pdb | awk '{{print $4}}' | head -n1 | tail -n1"
+    ligand_code=subprocess.check_output(['bash','-c', bash]).strip().decode("utf-8")
+    if ligand_code:
+        os.system("grep ATOM ligand.pdb | sed 's/{}  /{} B/g' > ligand_fixed.pdb".format(ligand_code,ligand_code))
+        bash="wc -l ligand_fixed.pdb | awk '{print $1}'"
+        total_lines=int(subprocess.check_output(['bash','-c', bash]).strip().decode("utf-8"))
+    else:
+        bash="grep HETATM ligand.pdb | awk '{{print $4}}' | head -n1 | tail -n1"
+        ligand_code=subprocess.check_output(['bash','-c', bash]).strip().decode("utf-8")
+        os.system("grep HETATM ligand.pdb | sed 's/{}  /{} B/g' > ligand_fixed.pdb".format(ligand_code,ligand_code))
+        bash="wc -l ligand_fixed.pdb | awk '{print $1}'"
+        total_lines=int(subprocess.check_output(['bash','-c', bash]).strip().decode("utf-8"))
     
     # Fix the atom numeration
     for i in range(1,total_lines+1):
@@ -165,9 +173,6 @@ def generate_complex(target,ligand,software):
     # Store the files
     os.system("mv ligand_fixed_ref.pdb ligand_fixed.pdb")
     os.system("cp ligand_fixed.pdb temp_ranking/{}_{}.pdb".format(ligand,software))
-    os.system("cp target/{}.pdb .".format(target))
-    os.system("cat {}.pdb ligand_fixed.pdb | sed 's/END/TER/g' > complex_{}_{}_{}.pdb".format(target,target,ligand,software))
-    os.system("echo 'TER' >> complex_{}_{}_{}.pdb".format(target,ligand,software))
 
 ########################################################################################
 
@@ -181,7 +186,6 @@ def score_vina(target,ligand):
     os.system("babel -ipdbqt ligand.pdbqt -opdb ligand.pdb")
     software="vina"
     generate_complex(target,ligand,software)
-    os.system("mv complex_{}_{}_vina.pdb complexes/vina".format(target,ligand))  
     os.system("rm xx* *.pdb *.pdbqt")
     
     return score_v
@@ -198,7 +202,6 @@ def score_smina(target,ligand):
     os.system("babel -ipdbqt ligand.pdbqt -opdb ligand.pdb")
     software="smina"
     generate_complex(target,ligand,software)
-    os.system("mv complex_{}_{}_smina.pdb complexes/smina".format(target,ligand))    
     os.system("rm xx* *.pdb *.pdbqt")
     
     return score_s
@@ -215,8 +218,7 @@ def score_ledock(target,ligand):
     os.system("grep -v REMARK ligand.pdb | sed 's/ATOM  /HETATM/g' > ligand_mod.pdb")
     os.system("mv ligand_mod.pdb ligand.pdb")
     software="ledock"
-    generate_complex(target,ligand,software)
-    os.system("mv complex_{}_{}_ledock.pdb complexes/ledock".format(target,ligand))    
+    generate_complex(target,ligand,software) 
     os.system("rm xx* *.pdb")
     
     return score_l
@@ -235,8 +237,7 @@ def score_rdock(target,ligand):
     
     # Generate complex
     software="rdock"
-    generate_complex(target,ligand,software)
-    os.system("mv complex_{}_{}_rdock.pdb complexes/rdock".format(target,ligand))    
+    generate_complex(target,ligand,software)  
     os.system("rm xx* *.pdb score.txt")
     
     return score_r
@@ -274,6 +275,9 @@ if __name__ == '__main__':
     ####################################################################################
     
     if mode=="docking":
+        
+        # Create required folders
+        os.system("mkdir -p config results/vina results/smina results/ledock results/rdock")
         # Iterate over the targets
         for target in list_targets:
             try:
@@ -386,6 +390,9 @@ if __name__ == '__main__':
     
     if mode=="ranking":
         
+        # Create required folders
+        os.system("mkdir ranks")
+        
         # Create general dictionaries for the final ranking
         ecr_vina={}
         ecr_smina={}
@@ -465,7 +472,10 @@ if __name__ == '__main__':
             # Calculate full RMSD
             ranked_ligands_rmsd={}
             for ligand in list_ligands:
-                rmsd_m=calculate_rmsd.calculate_mean_RMSD("temp_ranking",ligand,list_software)
+                try:
+                    rmsd_m=calculate_rmsd.calculate_mean_RMSD("temp_ranking",ligand,list_software)
+                except:
+                    rmsd_m=10.0
                 ranked_ligands_rmsd[ligand]=rmsd_m
             
             print(ranked_ligands_rmsd)

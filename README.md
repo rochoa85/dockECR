@@ -29,10 +29,14 @@ The workspace requires of the following folders:
 auxiliar: Folder containing scripts and the stand-alone programs
 target: Folder with the targets PDB files
 ligands: Folder with the ligands PDB files
+```
+
+After running docking and ranking campaigns, the following additional folders will be created:
+
+```
 config: Folder that will store the configuration files created per program
 results: Docking results per program used
-ranks: Ranks per each target and docking program used
-complexes: Final PDB files with the receptor and the docked best ligand in complex
+ranks: Ranks per each target and docking program used, as well as the final ECR method.
 ```
 
 An example of the script syntax is as follows::
@@ -53,15 +57,16 @@ arguments:
   -t LIST_TARGETS   File with the list of the PDB structures used as targets
  ```
 
-The script has two main modes. One is for running docking with any of the four programs mentioned in the `list_software.txt` file, and the second is for ranking with same list of docking programs. In the following sections we show how to use the main python script, and an additional bash script for ECR ranking. The examples provided in the code were run using the SARS-CoV-2 main protease with PDB id 6y2e and 5re4.
+The script has two main modes. One is for running docking with any of the four programs mentioned in the `list_software.txt` file, and the second is for ranking with same list of docking programs. In the following sections we show how to use the main python script. The examples provided in the code were run using the SARS-CoV-2 main protease with PDB id 6y2e and 5re4.
 
 ### Docking example
 
-After preparing the "list of software" file, and the "list of ligands" file with the PDB structures located in the `ligands` folder, the command can be run as:
+After preparing the `list_software.txt` file, and the `list_ligands.txt` file with the PDB structures located in the `ligands` folder, the command can be run as *(examples of both files are included in the code)*:
 
 ```
 python OCONDOR.py -m docking -l list_ligands.txt -s list_software.txt -t list_targets.txt
 ```
+
 
 For docking, we require to prepare a configuration file with the box center coordinates and the box size dimensions. The following is an example of a box located on the active site of the MPro structure 6y2e provided in the `target` folder:
 
@@ -73,15 +78,19 @@ size_x: 30
 size_y: 30
 size_z: 30
 ```
+**NOTE: The config file should be named config_[TARGET].txt, where the [TARGET] is the name given in the list_targets.txt file.**
+
 After running the protocol, the results with 10 poses per program are stored in the folder `results/[program]` as files with extensions depending on the docking program output.
 
 ### Ranking example
 
-With the docking results available in the workspace, the same script can be called using the *ranking* mode to generate rankings per program from the pool of ligands used in the virtual screening. An example using the same receptor is provided here:
+With the docking results available in the workspace, the same script can be called using the *ranking* mode to generate rankings per program from the pool of ligands used in the virtual screening. An example is provided here:
 
 ```
-python OCONDOR.py -m ranking -l list_ligands.txt -s list_software.txt -t 6y2e
+python OCONDOR.py -m ranking -l list_ligands.txt -s list_software.txt -t list_targets.txt
 ```
+
+The `list_targets.txt` file can contain the names of multiple targets, in order to do the ranking individually and using a merging and shrinking approach (see Ref. Palacio-Rodriguez et. al. 2019) to combine the results of multiple version of the same target. The ECR ranking is calculated in both cases.
 
 The ranking results are stored in the `ranks` folder with a three-column format file, where the first column is the ranking position, the second column is the ligand id, and the third column the docking score:
 
@@ -91,17 +100,7 @@ The ranking results are stored in the `ranks` folder with a three-column format 
 3	mol1	-10.6486
 ```
 
-With the rankings per software, it is possible to use the ECR method to generate a final consensus ranking as follows.
-
-### ECR script
-
-For the ECR calculation, a bash script was prepared, which can be called for this system as:
-
-```
-./calculate_ecr.sh -t 6y2e -s list_software.txt -l list_ligands.txt
-```
-
-The inputs are the target id, the file with the list of software and the file with the list of ligands used on the previous script. The results are finally sorted by the calculated ECR ranking in a file located in the `ranks` folder with the following format:
+With the rankings per software, it is possible to use the ECR method to generate a final consensus ranking. The results are sorted by the calculated ECR ranking in a file located in the `ranks` folder with the following format:
 
 ```
 1 mol1       1.05880939
@@ -109,11 +108,11 @@ The inputs are the target id, the file with the list of software and the file wi
 3 mol2       0.66164496
 ```
 
+**NOTE: If multiple targets are included, and ECR per target and for the combination of them is generated.**
+
 This final list can be used to prioritize candidates from a large number of molecules in a virtual screening campaign, using the outputs of multiple docking programs at the same time.
 
-### Additional: automatic library generation
-
-An additional script is provided to generate linked fragments from the list of MPro fragments reported in the COVID Moonshot initiative (https://covid.postera.ai/covid). The script makes use of the RDKit (https://www.rdkit.org/) and the CReM packages (https://github.com/DrrDom/crem) to link fragments with plaussible chemical modifications available in the ChEMBL database (https://www.ebi.ac.uk/chembl/). The generated SMILES are used to predit conformers in PDB format that can be included as input in the consensus docking and ranking open source protocol.
+An example of the docking and ranking results for the two included systems is available in the folder: `example_outputs`
 
 ### Support
 
