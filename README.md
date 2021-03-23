@@ -6,7 +6,7 @@
 
 ### Purpose
 
-The goal of OCONDOR is to implement multiple docking programs to predict scores between a single target or multiple targets (merging and shrinking aproach) and a library of compounds. The molecules are ranked based on the ECR ranking metric using as input the scores obtained by each program. The protocol is open source and requires to install third-party docking software, and information of the targets and ligands structures in PDB format
+The goal of OCONDOR is to implement multiple docking programs to predict scores between a single target or multiple targets (merging and shrinking aproach) and a library of compounds. The molecules are ranked based on the ECR ranking metric using as input the scores obtained by each program. The protocol is open source and requires to install third-party docking software, as well as information of the targets and ligands structures in PDB format
 
 ### Third-party tools
 
@@ -61,14 +61,14 @@ The script has two main modes. One is for running docking with any of the four p
 
 ### Docking example
 
-After preparing the `list_software.txt` file, and the `list_ligands.txt` file with the PDB structures located in the `ligands` folder, the command can be run as *(examples of both files are included in the code)*:
+After preparing the `list_software.txt` file, and the `list_ligands.txt` file with the names of the PDB structures located in the `ligands` folder, the command can be run as:
 
 ```
 python OCONDOR.py -m docking -l list_ligands.txt -s list_software.txt -t list_targets.txt
 ```
+**NOTE: Examples of all the input files are included in the code.**
 
-
-For docking, we require to prepare a configuration file with the box center coordinates and the box size dimensions. The following is an example of a box located on the active site of the MPro structure 6y2e provided in the `target` folder:
+For docking, we require to prepare a configuration file with the box center coordinates and the box size dimensions. The following is an example of a box located in the active site of the MPro structure 6y2e provided in the `target` folder:
 
 ```
 center_x: -11.6
@@ -90,7 +90,7 @@ With the docking results available in the workspace, the same script can be call
 python OCONDOR.py -m ranking -l list_ligands.txt -s list_software.txt -t list_targets.txt
 ```
 
-The `list_targets.txt` file can contain the names of multiple targets, in order to do the ranking individually and using a merging and shrinking approach (see Ref. Palacio-Rodriguez et. al. 2019) to combine the results of multiple version of the same target. The ECR ranking is calculated in both cases.
+The `list_targets.txt` file can contain the names of multiple targets, in order to do the ranking individually, and using a merging and shrinking approach (see Ref. Palacio-Rodriguez et. al. 2019) to combine the results of multiple version of the same target. The ECR ranking is calculated in both cases.
 
 The ranking results are stored in the `ranks` folder with a three-column format file, where the first column is the ranking position, the second column is the ligand id, and the third column the docking score:
 
@@ -108,7 +108,7 @@ With the rankings per software, it is possible to use the ECR method to generate
 3 mol2       0.66164496
 ```
 
-**NOTE: If multiple targets are included, and ECR per target and for the combination of them is generated.**
+**NOTE: If multiple targets are included, an ECR ranking per target and for the combination of them is generated.**
 
 This final list can be used to prioritize candidates from a large number of molecules in a virtual screening campaign, using the outputs of multiple docking programs at the same time.
 
