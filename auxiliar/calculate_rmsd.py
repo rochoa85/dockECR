@@ -44,6 +44,7 @@ def GetBestRMSD(probe,ref,refConfId=-1,probeConfId=-1,maps=None):
         maps = [list(enumerate(match)) for match in matches]
     
         bestRMSD = 1000.0
+        rmsd=100.0
         for amap in maps:
             rmsd = RMSD(probe,ref,amap)
         if rmsd<bestRMSD:

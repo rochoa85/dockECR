@@ -109,6 +109,7 @@ def run_rdock(target,ligand):
     os.system("./auxiliar/software/rbdock -i {}.sd -o {}_{} -r rdock.prm -p dock.prm -n 10".format(ligand,target,ligand,target))
     os.system("./auxiliar/software/sdsort -n -f'SCORE.INTER' {}_{}.sd > {}_{}.sorted".format(target,ligand,target,ligand))
     os.system("mv {}_{}.sorted results/rdock/{}_{}_out.sd".format(target,ligand,target,ligand))
+    #os.system("rm *.sd *.mol2 rdock* dock.prm")
 
 ########################################################################################
 
@@ -169,10 +170,13 @@ def generate_complex(target,ligand,software):
             os.system("head -n {} ligand_fixed.pdb | tail -n 1 | sed 's/{}   /{}{}  /g' >> ligand_fixed_ref.pdb".format(i,atom,atom,i))
         else:
             os.system("head -n {} ligand_fixed.pdb | tail -n 1 | sed 's/{}   /{}{} /g' >> ligand_fixed_ref.pdb".format(i,atom,atom,i))
-    
+    os.system("sed -i 's/Cl/CL/g' ligand_fixed_ref.pdb")    
     # Store the files
     os.system("mv ligand_fixed_ref.pdb ligand_fixed.pdb")
     os.system("cp ligand_fixed.pdb temp_ranking/{}_{}.pdb".format(ligand,software))
+    #os.system("cp target/{}.pdb .".format(target))
+    #os.system("cat {}.pdb ligand_fixed.pdb | sed 's/END/TER/g' > complex_{}_{}_{}.pdb".format(target,target,ligand,software))
+    #os.system("echo 'TER' >> complex_{}_{}_{}.pdb".format(target,ligand,software))
 
 ########################################################################################
 
@@ -186,6 +190,7 @@ def score_vina(target,ligand):
     os.system("babel -ipdbqt ligand.pdbqt -opdb ligand.pdb")
     software="vina"
     generate_complex(target,ligand,software)
+    #os.system("mv complex_{}_{}_vina.pdb complexes/vina".format(target,ligand))  
     os.system("rm xx* *.pdb *.pdbqt")
     
     return score_v
@@ -202,6 +207,7 @@ def score_smina(target,ligand):
     os.system("babel -ipdbqt ligand.pdbqt -opdb ligand.pdb")
     software="smina"
     generate_complex(target,ligand,software)
+    #os.system("mv complex_{}_{}_smina.pdb complexes/smina".format(target,ligand))    
     os.system("rm xx* *.pdb *.pdbqt")
     
     return score_s
@@ -218,7 +224,8 @@ def score_ledock(target,ligand):
     os.system("grep -v REMARK ligand.pdb | sed 's/ATOM  /HETATM/g' > ligand_mod.pdb")
     os.system("mv ligand_mod.pdb ligand.pdb")
     software="ledock"
-    generate_complex(target,ligand,software) 
+    generate_complex(target,ligand,software)
+    #os.system("mv complex_{}_{}_ledock.pdb complexes/ledock".format(target,ligand))    
     os.system("rm xx* *.pdb")
     
     return score_l
@@ -237,7 +244,8 @@ def score_rdock(target,ligand):
     
     # Generate complex
     software="rdock"
-    generate_complex(target,ligand,software)  
+    generate_complex(target,ligand,software)
+    #os.system("mv complex_{}_{}_rdock.pdb complexes/rdock".format(target,ligand))    
     os.system("rm xx* *.pdb score.txt")
     
     return score_r
@@ -275,9 +283,9 @@ if __name__ == '__main__':
     ####################################################################################
     
     if mode=="docking":
-        
         # Create required folders
         os.system("mkdir -p config results/vina results/smina results/ledock results/rdock")
+
         # Iterate over the targets
         for target in list_targets:
             try:
@@ -389,7 +397,6 @@ if __name__ == '__main__':
     ####################################################################################
     
     if mode=="ranking":
-        
         # Create required folders
         os.system("mkdir ranks")
         
@@ -495,29 +502,46 @@ if __name__ == '__main__':
         if len(list_targets)==1:
             target=list_targets[0]
             list_software.append("rmsd")
-            sigma=len(list_ligands)
+            sigma=float(len(list_ligands))*0.05
             prob_ligands={}
+            prob_normsd_ligands={}
             
             # Iterate over the ligands to calculate the ECR
             for ligand in list_ligands:
                 prob=0
+                prob_normsd=0
                 if "vina" in list_software:
-                    prob+=math.exp(-1*ecr_vina[target][ligand]/sigma)/sigma
+                    prob+=math.exp(-1.0*ecr_vina[target][ligand]/sigma)/sigma
+                    prob_normsd+=math.exp(-1.0*ecr_vina[target][ligand]/sigma)/sigma
                 if "smina" in list_software:
-                    prob+=math.exp(-1*ecr_smina[target][ligand]/sigma)/sigma
+                    prob+=math.exp(-1.0*ecr_smina[target][ligand]/sigma)/sigma
+                    prob_normsd+=math.exp(-1.0*ecr_smina[target][ligand]/sigma)/sigma
                 if "ledock" in list_software:
-                    prob+=math.exp(-1*ecr_ledock[target][ligand]/sigma)/sigma
+                    prob+=math.exp(-1.0*ecr_ledock[target][ligand]/sigma)/sigma
+                    prob_normsd+=math.exp(-1.0*ecr_ledock[target][ligand]/sigma)/sigma
                 if "rdock" in list_software:
-                    prob+=math.exp(-1*ecr_rdock[target][ligand]/sigma)/sigma
+                    prob+=math.exp(-1.0*ecr_rdock[target][ligand]/sigma)/sigma
+                    prob_normsd+=math.exp(-1.0*ecr_rdock[target][ligand]/sigma)/sigma
                 if "rmsd" in list_software:
-                    prob+=math.exp(-1*ecr_rmsd[target][ligand]/sigma)/sigma
+                    prob+=math.exp(-1.0*ecr_rmsd[target][ligand]/sigma)/sigma
                 prob_ligands[ligand]=prob
+                prob_normsd_ligands[ligand]=prob_normsd
             
+            # Print ECR with all scores and RMSD
             sorted_prob = sorted(prob_ligands.items(), key=operator.itemgetter(1))
             sorted_prob.reverse()
             
             ecr_file=open("ranks/rank_ecr_{}.txt".format(target),"w")
             for j,element in enumerate(sorted_prob):
+                ecr_file.write("{}\t{}\t{:.8f}\n".format(j+1,element[0],element[1]))
+            ecr_file.close()
+            
+            # Print ECR with all scores and without RMSD
+            sorted_prob_normsd = sorted(prob_normsd_ligands.items(), key=operator.itemgetter(1))
+            sorted_prob_normsd.reverse()
+            
+            ecr_file=open("ranks/rank_ecr_normsd_{}.txt".format(target),"w")
+            for j,element in enumerate(sorted_prob_normsd):
                 ecr_file.write("{}\t{}\t{:.8f}\n".format(j+1,element[0],element[1]))
             ecr_file.close()
             print("ECR ranking completed")
@@ -529,7 +553,7 @@ if __name__ == '__main__':
             ecr_rdock["total"]={}
             ecr_rmsd["total"]={}
             list_software.append("rmsd")
-            sigma=len(list_ligands)
+            sigma=float(len(list_ligands))*0.05
             
             for ligand in list_ligands:
                 best_rank_vina=0
@@ -558,21 +582,29 @@ if __name__ == '__main__':
                 ecr_rmsd["total"][ligand]=best_rank_rmsd
                         
             prob_ligands={}
+            prob_normsd_ligands={}
             # Iterate over the ligands to calculate the ECR
             for ligand in list_ligands:
                 prob=0
+                prob_normsd=0
                 if "vina" in list_software:
-                    prob+=math.exp(-1*ecr_vina["total"][ligand]/sigma)/sigma
+                    prob+=math.exp(-1.0*ecr_vina["total"][ligand]/sigma)/sigma
+                    prob_normsd+=math.exp(-1.0*ecr_vina["total"][ligand]/sigma)/sigma
                 if "smina" in list_software:
-                    prob+=math.exp(-1*ecr_smina["total"][ligand]/sigma)/sigma
+                    prob+=math.exp(-1.0*ecr_smina["total"][ligand]/sigma)/sigma
+                    prob_normsd+=math.exp(-1.0*ecr_smina["total"][ligand]/sigma)/sigma
                 if "ledock" in list_software:
-                    prob+=math.exp(-1*ecr_ledock["total"][ligand]/sigma)/sigma
+                    prob+=math.exp(-1.0*ecr_ledock["total"][ligand]/sigma)/sigma
+                    prob_normsd+=math.exp(-1.0*ecr_ledock["total"][ligand]/sigma)/sigma
                 if "rdock" in list_software:
-                    prob+=math.exp(-1*ecr_rdock["total"][ligand]/sigma)/sigma
+                    prob+=math.exp(-1.0*ecr_rdock["total"][ligand]/sigma)/sigma
+                    prob_normsd+=math.exp(-1.0*ecr_rdock["total"][ligand]/sigma)/sigma
                 if "rmsd" in list_software:
-                    prob+=math.exp(-1*ecr_rmsd["total"][ligand]/sigma)/sigma
+                    prob+=math.exp(-1.0*ecr_rmsd["total"][ligand]/sigma)/sigma
                 prob_ligands[ligand]=prob
+                prob_normsd_ligands[ligand]=prob_normsd
             
+            # Print ECR with all scores and with RMSD
             sorted_prob = sorted(prob_ligands.items(), key=operator.itemgetter(1))
             sorted_prob.reverse()
             
@@ -581,33 +613,60 @@ if __name__ == '__main__':
             for j,element in enumerate(sorted_prob):
                 ecr_file.write("{}\t{}\t{:.8f}\n".format(j+1,element[0],element[1]))
             ecr_file.close()
+            
+            # Print ECR with all scores and without RMSD
+            sorted_prob_normsd = sorted(prob_normsd_ligands.items(), key=operator.itemgetter(1))
+            sorted_prob_normsd.reverse()
+            
+            target_comb="-".join(list_targets)
+            ecr_file=open("ranks/rank_ecr_normsd_{}.txt".format(target_comb),"w")
+            for j,element in enumerate(sorted_prob_normsd):
+                ecr_file.write("{}\t{}\t{:.8f}\n".format(j+1,element[0],element[1]))
+            ecr_file.close()
             print("ECR ranking completed")
             
             # Run the ECR individually
             for target in list_targets:
                 
                 prob_ligands={}
-                
+                prob_normsd_ligands={}
+            
                 # Iterate over the ligands to calculate the ECR
                 for ligand in list_ligands:
                     prob=0
+                    prob_normsd=0
                     if "vina" in list_software:
-                        prob+=math.exp(-1*ecr_vina[target][ligand]/sigma)/sigma
+                        prob+=math.exp(-1.0*ecr_vina[target][ligand]/sigma)/sigma
+                        prob_normsd+=math.exp(-1.0*ecr_vina[target][ligand]/sigma)/sigma
                     if "smina" in list_software:
-                        prob+=math.exp(-1*ecr_smina[target][ligand]/sigma)/sigma
+                        prob+=math.exp(-1.0*ecr_smina[target][ligand]/sigma)/sigma
+                        prob_normsd+=math.exp(-1.0*ecr_smina[target][ligand]/sigma)/sigma
                     if "ledock" in list_software:
-                        prob+=math.exp(-1*ecr_ledock[target][ligand]/sigma)/sigma
+                        prob+=math.exp(-1.0*ecr_ledock[target][ligand]/sigma)/sigma
+                        prob_normsd+=math.exp(-1.0*ecr_ledock[target][ligand]/sigma)/sigma
                     if "rdock" in list_software:
-                        prob+=math.exp(-1*ecr_rdock[target][ligand]/sigma)/sigma
+                        prob+=math.exp(-1.0*ecr_rdock[target][ligand]/sigma)/sigma
+                        prob_normsd+=math.exp(-1.0*ecr_rdock[target][ligand]/sigma)/sigma
                     if "rmsd" in list_software:
-                        prob+=math.exp(-1*ecr_rmsd[target][ligand]/sigma)/sigma
+                        prob+=math.exp(-1.0*ecr_rmsd[target][ligand]/sigma)/sigma
                     prob_ligands[ligand]=prob
+                    prob_normsd_ligands[ligand]=prob_normsd
                 
+                # Print ECR with all scores and RMSD
                 sorted_prob = sorted(prob_ligands.items(), key=operator.itemgetter(1))
                 sorted_prob.reverse()
                 
                 ecr_file=open("ranks/rank_ecr_{}.txt".format(target),"w")
                 for j,element in enumerate(sorted_prob):
+                    ecr_file.write("{}\t{}\t{:.8f}\n".format(j+1,element[0],element[1]))
+                ecr_file.close()
+                
+                # Print ECR with all scores and without RMSD
+                sorted_prob_normsd = sorted(prob_normsd_ligands.items(), key=operator.itemgetter(1))
+                sorted_prob_normsd.reverse()
+                
+                ecr_file=open("ranks/rank_ecr_normsd_{}.txt".format(target),"w")
+                for j,element in enumerate(sorted_prob_normsd):
                     ecr_file.write("{}\t{}\t{:.8f}\n".format(j+1,element[0],element[1]))
                 ecr_file.close()
                 print("ECR ranking for target {} completed".format(target))
