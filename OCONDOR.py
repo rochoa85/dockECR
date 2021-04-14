@@ -407,6 +407,7 @@ if __name__ == '__main__':
         ecr_ledock={}
         ecr_rdock={}
         ecr_rmsd={}
+        ecr_rmsd_ecr={}
 
         # Iterate over the list of targets
         for target in list_targets:
