@@ -519,27 +519,35 @@ if __name__ == '__main__':
             list_software.append("rmsd")
             sigma=float(len(list_ligands))*0.05
             prob_ligands={}
+            prob_ligands_rmsd={}
             prob_normsd_ligands={}
 
             # Iterate over the ligands to calculate the ECR
             for ligand in list_ligands:
                 prob=0
+                prob_rmsd=0
                 prob_normsd=0
                 if "vina" in list_software:
                     prob+=math.exp(-1.0*ecr_vina[target][ligand]/sigma)/sigma
+                    prob_rmsd+=math.exp(-1.0*ecr_vina[target][ligand]/sigma)/sigma
                     prob_normsd+=math.exp(-1.0*ecr_vina[target][ligand]/sigma)/sigma
                 if "smina" in list_software:
                     prob+=math.exp(-1.0*ecr_smina[target][ligand]/sigma)/sigma
+                    prob_rmsd+=math.exp(-1.0*ecr_smina[target][ligand]/sigma)/sigma
                     prob_normsd+=math.exp(-1.0*ecr_smina[target][ligand]/sigma)/sigma
                 if "ledock" in list_software:
                     prob+=math.exp(-1.0*ecr_ledock[target][ligand]/sigma)/sigma
+                    prob_rmsd+=math.exp(-1.0*ecr_ledock[target][ligand]/sigma)/sigma
                     prob_normsd+=math.exp(-1.0*ecr_ledock[target][ligand]/sigma)/sigma
                 if "rdock" in list_software:
                     prob+=math.exp(-1.0*ecr_rdock[target][ligand]/sigma)/sigma
+                    prob_rmsd+=math.exp(-1.0*ecr_rdock[target][ligand]/sigma)/sigma
                     prob_normsd+=math.exp(-1.0*ecr_rdock[target][ligand]/sigma)/sigma
                 if "rmsd" in list_software:
                     prob+=math.exp(-1.0*ecr_rmsd[target][ligand]/sigma)/sigma
+                    prob_rmsd+=math.exp(-1.0*ecr_rmsd_ecr[target][ligand]/sigma)/sigma
                 prob_ligands[ligand]=prob
+                prob_ligands_rmsd[ligand]=prob_rmsd
                 prob_normsd_ligands[ligand]=prob_normsd
 
             # Print ECR with all scores and RMSD
@@ -548,6 +556,15 @@ if __name__ == '__main__':
 
             ecr_file=open("ranks/rank_ecr_{}.txt".format(target),"w")
             for j,element in enumerate(sorted_prob):
+                ecr_file.write("{}\t{}\t{:.8f}\n".format(j+1,element[0],element[1]))
+            ecr_file.close()
+
+            # Print ECR with all scores and RMSD with ECR
+            sorted_prob_rmsd = sorted(prob_ligands_rmsd.items(), key=operator.itemgetter(1))
+            sorted_prob_rmsd.reverse()
+
+            ecr_file=open("ranks/rank_ecr_rmsd_{}.txt".format(target),"w")
+            for j,element in enumerate(sorted_prob_rmsd):
                 ecr_file.write("{}\t{}\t{:.8f}\n".format(j+1,element[0],element[1]))
             ecr_file.close()
 
