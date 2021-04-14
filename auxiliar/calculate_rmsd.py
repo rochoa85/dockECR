@@ -21,38 +21,38 @@ def GetBestRMSD(probe,ref,refConfId=-1,probeConfId=-1,maps=None):
             rmsd += dist_2(posp,posf)
         rmsd = math.sqrt(rmsd/atomNum)
         return rmsd
-    
+
     def dist_2(atoma_xyz, atomb_xyz):
         dis2 = 0.0
         for i, j  in zip(atoma_xyz,atomb_xyz):
             dis2 += (i -j)**2
         return dis2
-    
+
     def orginXYZ(mol):
         mol_pos={}
         for i in range(0,mol.GetNumAtoms()):
             pos = mol.GetConformer().GetAtomPosition(i)
             mol_pos[i] = pos
         return mol_pos
-    
+
     # When mapping the coordinate of probe will changed!!!
     ref.pos = orginXYZ(ref)
     probe.pos = orginXYZ(probe)
-  
+
     if not maps:
-        matches = ref.GetSubstructMatches(probe,uniquify=False)      
+        matches = ref.GetSubstructMatches(probe,uniquify=False)
         maps = [list(enumerate(match)) for match in matches]
-    
+
         bestRMSD = 1000.0
         rmsd=100.0
         for amap in maps:
             rmsd = RMSD(probe,ref,amap)
         if rmsd<bestRMSD:
-            bestRMSD = rmsd 
-  
+            bestRMSD = rmsd
+
     return bestRMSD
 
-def calculate_mean_RMSD(folder,ligand,methods):    
+def calculate_mean_RMSD(folder,ligand,methods,sigma):
     pairs=[]
     rmsd_values=[]
     for m1 in methods:
@@ -68,4 +68,9 @@ def calculate_mean_RMSD(folder,ligand,methods):
                     #except:
                     #    pairs.append((m1,m2))
                     #    pass
-    return mean(rmsd_values)
+    # ECR rmsd
+    prob_rmsd=0
+    for val in rmsd_values:
+        prob_rmsd+=math.exp(-1.0*val/sigma)/sigma
+
+    return mean(rmsd_values),prob_rmsd
