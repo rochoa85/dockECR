@@ -52,7 +52,7 @@ def GetBestRMSD(probe,ref,refConfId=-1,probeConfId=-1,maps=None):
 
     return bestRMSD
 
-def calculate_mean_RMSD(folder,ligand,methods,sigma):
+def calculate_mean_RMSD(folder,ligand,methods):
     pairs=[]
     rmsd_values=[]
     for m1 in methods:
@@ -69,8 +69,8 @@ def calculate_mean_RMSD(folder,ligand,methods,sigma):
                     #    pairs.append((m1,m2))
                     #    pass
     # ECR rmsd
-    prob_rmsd=0
-    for val in rmsd_values:
-        prob_rmsd+=math.exp(-1.0*val/sigma)/sigma
+    #prob_rmsd=0
+    #for val in rmsd_values:
+    #    prob_rmsd+=math.exp(-1.0*val/sigma)/sigma
 
-    return mean(rmsd_values),prob_rmsd
+    return mean(rmsd_values)
