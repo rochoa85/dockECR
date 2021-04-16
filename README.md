@@ -2,7 +2,7 @@
 
 **dockECR: open consensus docking and ranking protocol for virtual screening of small molecules**
 
-**Authors:** Rodrigo Ochoa, Karen Palacio-Rodriguez, Natalia Adler, Camila M. Clemente and Pilar Cossio
+**Authors:** Rodrigo Ochoa, Karen Palacio-Rodriguez, Camila M. Clemente and Natalia Adler
 
 ### Purpose
 
