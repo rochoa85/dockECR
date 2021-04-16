@@ -19,7 +19,7 @@ The script is written in python3 with system calls to the Ubuntu OS. The docking
 - MGL Tools: http://mgltools.scripps.edu/downloads - stand-alone tools: pythonsh
 - RDKit: http://rdkit.org - version for python3. **A conda environment is available to facilitate the installation.**
 
-In addition to these packages, it is required to install OpenBabel (https://sourceforge.net/projects/openbabel/), which can be obtained from the main OS package repository.
+In addition to these packages, it is required to install OpenBabel (https://sourceforge.net/projects/openbabel/), which can be obtained from the main OS package repository **(version 2.3 is required).**
 
 ### How to run the consensus docking and ranking script
 
