@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
 """
-OCONDOR: Open CONsensus DOcking and Ranking protocol for virtual screening of small molecules
-Authors: Rodrigo Ochoa, Karen Palacio-Rodriguez, Natalia Adler, Camila M. Clemente and Pilar Cossio
+dockECR: open consensus docking and ranking protocol for virtual screening of small molecules
+Authors: Rodrigo Ochoa, Karen Palacio-Rodriguez, Camila M. Clemente and Natalia Adler
 
 Please also cite:
 Palacio-Rodriguez, K., Lans, I., Cavasotto, C. N., & Cossio, P. (2019).
@@ -25,7 +25,7 @@ Open Babel: https://sourceforge.net/projects/openbabel/
 # Authorship
 ########################################################################################
 
-__credits__ = ["Rodrigo Ochoa","Karen Palacio-Rodriguez","Natalia Adler","Camila Clemente","Pilar Cossio"]
+__credits__ = ["Rodrigo Ochoa","Karen Palacio-Rodriguez","Camila Clemente","Natalia Adler"]
 __license__ = "MIT"
 __version__ = "1.0"
 
@@ -257,7 +257,7 @@ def score_rdock(target,ligand):
 if __name__ == '__main__':
 
     # Script arguments
-    parser = argparse.ArgumentParser(description='OCONDOR: Open CONsensus DOcking and Ranking protocol')
+    parser = argparse.ArgumentParser(description='dockECR: open consensus docking and ranking protocol')
     parser.add_argument('-l', dest='list_ligands', action='store',required=True,
                         help='File with the list of ligands names available in the ligand folder')
     parser.add_argument('-s', dest='list_software', action='store',required=True,
@@ -497,7 +497,7 @@ if __name__ == '__main__':
                 ecr_rmsd[target][element[0]]=j+1
             rank_file_rmsd.close()
 
-            os.system("rm -r temp_ranking")	
+            os.system("rm -r temp_ranking")
 
         # Run ECR ranking
         if len(list_targets)==1:
