@@ -1,12 +1,12 @@
-# OCONDOR
+# dockECR
 
-**OCONDOR: Open CONsensus DOcking and Ranking protocol for virtual screening of small molecules**
+**dockECR: open consensus docking and ranking protocol for virtual screening of small molecules**
 
 **Authors:** Rodrigo Ochoa, Karen Palacio-Rodriguez, Natalia Adler, Camila M. Clemente and Pilar Cossio
 
 ### Purpose
 
-The goal of OCONDOR is to implement multiple docking programs to predict scores between a single target or multiple targets (merging and shrinking aproach) and a library of compounds. The molecules are ranked based on the ECR ranking metric using as input the scores obtained by each program. The protocol is open source and requires to install third-party docking software, as well as information of the targets and ligands structures in PDB format
+The goal of dockECR is to implement multiple docking programs to predict scores between a single target or multiple targets (merging and shrinking aproach) and a library of compounds. The molecules are ranked based on the ECR ranking metric using as input the scores obtained by each program. The protocol is open source and requires to install third-party docking software, as well as information of the targets and ligands structures in PDB format
 
 ### Third-party tools
 
@@ -41,7 +41,7 @@ ranks: Ranks per each target and docking program used, as well as the final ECR 
 
 An example of the script syntax is as follows::
 
-`python OCONDOR.py [-h] -l LIST_LIGANDS -s LIST_SOFTWARE -m MODE -t LIST_TARGETS 
+`python dockECR.py [-h] -l LIST_LIGANDS -s LIST_SOFTWARE -m MODE -t LIST_TARGETS 
                                        
 where the arguments are:
 
@@ -64,7 +64,7 @@ The script has two main modes. One is for running docking with any of the four p
 After preparing the `list_software.txt` file, and the `list_ligands.txt` file with the names of the PDB structures located in the `ligands` folder, the command can be run as:
 
 ```
-python OCONDOR.py -m docking -l list_ligands.txt -s list_software.txt -t list_targets.txt
+python dockECR.py -m docking -l list_ligands.txt -s list_software.txt -t list_targets.txt
 ```
 **NOTE: Examples of all the input files are included in the code.**
 
@@ -87,7 +87,7 @@ After running the protocol, the results with 10 poses per program are stored in 
 With the docking results available in the workspace, the same script can be called using the *ranking* mode to generate rankings per program from the pool of ligands used in the virtual screening. An example is provided here:
 
 ```
-python OCONDOR.py -m ranking -l list_ligands.txt -s list_software.txt -t list_targets.txt
+python dockECR.py -m ranking -l list_ligands.txt -s list_software.txt -t list_targets.txt
 ```
 
 The `list_targets.txt` file can contain the names of multiple targets, in order to do the ranking individually, and using a merging and shrinking approach (see Ref. Palacio-Rodriguez et. al. 2019) to combine the results of multiple version of the same target. The ECR ranking is calculated in both cases.
