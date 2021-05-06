@@ -72,7 +72,8 @@ def prepare_rdock_cavity(target,ligand,center_x,center_y,center_z,size_x,size_y,
     os.system("csplit out.pdbqt /MODEL/ {*}; mv xx01 ligand.pdbqt")
     os.system("babel -ipdbqt ligand.pdbqt -osdf ligand.sd")
     os.system("babel -ipdb target/{}.pdb -omol2 receptor.mol2".format(target))
-    os.system("/auxiliar/software/rbcavity -was -d -r config/rdock.prm")
+    os.system("cp auxiliar/rdock.prm config/rdock.prm")
+    os.system("./auxiliar/software/rbcavity -was -d -r config/rdock.prm")
     os.system("rm xx* score.log *.pdbqt")
 
 ########################################################################################
