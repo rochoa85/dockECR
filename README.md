@@ -16,7 +16,7 @@ The script is written in python3 with system calls to the Ubuntu OS. The docking
 - Smina: https://sourceforge.net/projects/smina/files/ - stand-alone tools: smina.static
 - LeDock: http://www.lephar.com/download.htm - stand-alone tools: ledock_linux_x86
 - rDock: https://sourceforge.net/projects/rdock/files/ - stand-alone tools: rbcavity, rbdock and sdsort. **To compile the program it is required gcc > 3 and < 6, plus additional requirements mentioned in the project website**
-- MGL Tools: http://mgltools.scripps.edu/downloads - stand-alone tools: pythonsh
+- MGL Tools: http://mgltools.scripps.edu/downloads - stand-alone tools: pythonsh and the scripts *prepare_ligand4.py* and *prepare_receptor4.py*
 - RDKit: http://rdkit.org - version for python3. 
 
 **NOTE:** To facilitate the compilation/installation of rDock and RDKit, it is recommended to create a conda (https://docs.conda.io/en/latest/) virtual environment. The packages can be installed by adding the corresponding channels after the environment is created:
