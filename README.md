@@ -15,7 +15,7 @@ The script is written in python3 with system calls to the Ubuntu OS. The docking
 - AutoDock Vina: http://vina.scripps.edu/download.html - stand-alone tools: vina
 - Smina: https://sourceforge.net/projects/smina/files/ - stand-alone tools: smina.static
 - LeDock: http://www.lephar.com/download.htm - stand-alone tools: ledock_linux_x86
-- rDock: https://sourceforge.net/projects/rdock/files/ - stand-alone tools: rbcavity, rbdock and sdsort. **To compile the program it is required gcc > 3 and < 6**
+- rDock: https://sourceforge.net/projects/rdock/files/ - stand-alone tools: rbcavity, rbdock and sdsort. **To compile the program it is required gcc > 3 and < 6, plus additional requirements mentioned in the project website**
 - MGL Tools: http://mgltools.scripps.edu/downloads - stand-alone tools: pythonsh
 - RDKit: http://rdkit.org - version for python3. 
 
