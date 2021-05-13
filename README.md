@@ -15,11 +15,23 @@ The script is written in python3 with system calls to the Ubuntu OS. The docking
 - AutoDock Vina: http://vina.scripps.edu/download.html - stand-alone tools: vina
 - Smina: https://sourceforge.net/projects/smina/files/ - stand-alone tools: smina.static
 - LeDock: http://www.lephar.com/download.htm - stand-alone tools: ledock_linux_x86
-- rDock: https://sourceforge.net/projects/rdock/files/ - stand-alone tools: rbcavity, rbdock and sdsort
+- rDock: https://sourceforge.net/projects/rdock/files/ - stand-alone tools: rbcavity, rbdock and sdsort. **To compile the program it is required gcc > 3 and < 6**
 - MGL Tools: http://mgltools.scripps.edu/downloads - stand-alone tools: pythonsh
-- RDKit: http://rdkit.org - version for python3. **A conda environment is available to facilitate the installation.**
+- RDKit: http://rdkit.org - version for python3. 
 
-In addition to these packages, it is required to install OpenBabel (https://sourceforge.net/projects/openbabel/), which can be obtained from the main OS package repository **(version 2.3 is required).**
+**NOTE:** To facilitate the compilation/installation of rDock and RDKit, it is recommended to create a conda (https://docs.conda.io/en/latest/) virtual environment. The packages can be installed by adding the corresponding channels after the environment is created:
+
+```
+conda config --add channels bioconda
+conda config --add channels conda-forge
+```
+Then the packages are installed with:
+```
+conda install -c bioconda rdock
+conda install -c conda-forge rdkit
+```
+
+In addition to these packages, it is required to install OpenBabel (https://sourceforge.net/projects/openbabel/), which can be obtained from the main OS package repository. **The version 2.3 is required (the program called babel instead of obabel).**
 
 ### How to run the consensus docking and ranking script
 
@@ -41,7 +53,7 @@ ranks: Ranks per each target and docking program used, as well as the final ECR 
 
 An example of the script syntax is as follows::
 
-`python dockECR.py [-h] -l LIST_LIGANDS -s LIST_SOFTWARE -m MODE -t LIST_TARGETS 
+`python dockECR.py [-h] -l LIST_LIGANDS -s LIST_SOFTWARE -m MODE -t LIST_TARGETS`
                                        
 where the arguments are:
 
