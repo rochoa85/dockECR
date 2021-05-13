@@ -10,7 +10,7 @@ The goal of dockECR is to implement multiple docking programs to predict scores 
 
 ### Third-party tools
 
-The script is written in python3 with system calls to the Ubuntu OS. The docking stand-alone programs can be put after installation in the folder `auxiliar/software`. For instructions about how to download and install each program follow these websites:
+The script is written in python3 with system calls to the Ubuntu OS. The docking stand-alone programs can be put after installation in the folder `auxiliar/software` **(alternatively, the code can be modified to call the programs without local paths, in case they have been installed in the system path.)**. For instructions about how to download and install each program follow these websites:
 
 - AutoDock Vina: http://vina.scripps.edu/download.html - stand-alone tools: vina
 - Smina: https://sourceforge.net/projects/smina/files/ - stand-alone tools: smina.static
