@@ -128,6 +128,8 @@ An example of the docking and ranking results for the two included systems is av
 
 ### Support
 
-In case the protocol is useful for other research projects and require some advice, please contact us to the email: rodrigo.ochoa@udea.edu.co. If this protocol is implemented, please also cite: 
+In case the protocol is useful for other research projects and require some advice, please contact us to the email: rodrigo.ochoa@udea.edu.co. If this protocol is implemented, please cite: 
+
+- Ochoa, R., Palacio-Rodriguez, K., Clemente, C.M., & Adler, N.S. (2021). dockECR: Open consensus docking and ranking protocol for virtual screening of small molecules. Journal of Molecular Graphics and Modelling, 109, 108023.
 
 - Palacio-Rodriguez, K., Lans, I., Cavasotto, C. N., & Cossio, P. (2019). Exponential consensus ranking improves the outcome in docking and receptor ensemble docking. Scientific reports, 9(1), 1-14.
